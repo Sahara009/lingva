@@ -1,0 +1,25 @@
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4adad;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 5px;
+  }
+}
