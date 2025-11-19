@@ -42,6 +42,13 @@ export const Header: React.FC<Props> = ({ className }) => {
           <Link
             to={"/"}
             className={`${styles.link} ${animate ? styles.fadeIn : ""}`}
+            style={{ animationDelay: "0.3s" }}
+          >
+            Сотрудничество
+          </Link>
+          <Link
+            to={"/"}
+            className={`${styles.link} ${animate ? styles.fadeIn : ""}`}
             style={{ animationDelay: "0.4s" }}
           >
             Курсы
@@ -111,6 +118,9 @@ export const Header: React.FC<Props> = ({ className }) => {
             <nav className={styles.mobileNav}>
               <Link to="/" onClick={toggleMenu}>
                 Главная
+              </Link>
+              <Link to="/" onClick={toggleMenu}>
+                Сотрудничество
               </Link>
               <Link to="/" onClick={toggleMenu}>
                 Курсы
