@@ -1,0 +1,174 @@
+.mainSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 480px) {
+    margin-top: 1rem;
+    gap: 2rem !important;
+  }
+
+  &__text {
+    flex: 2 1 400px;
+
+    h1 {
+      font-size: clamp(26px, 4vw, 50px);
+      font-weight: 600;
+      white-space: normal; // разрешаем перенос
+
+      span {
+        background: #ff69b4;
+        color: #fff;
+        padding: 0 8px;
+        border-radius: 6px;
+      }
+    }
+
+    p {
+      margin: 1.5rem 0 3rem;
+      font-size: clamp(14px, 1.6vw, 18px);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    &_blue,
+    &_red {
+      padding: 14px 28px;
+      font-size: clamp(18px, 2vw, 18px);
+      border-radius: 30px;
+      transition: transform 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 1 200px;
+      .icon {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &_blue {
+      background: linear-gradient(70deg, #2a4d5d 0%, #47a7d2 130%);
+      color: #fff;
+    }
+
+    &_red {
+      background: transparent;
+      color: var(--color-accent);
+      border: 1px solid var(--color-accent);
+      gap: 0.7rem;
+    }
+  }
+
+  /* ---- PHOTO ---- */
+  &__photo {
+    flex: 1 1 350px;
+    position: relative;
+
+    .block {
+      width: 100%;
+      //   max-width: 420px;
+      aspect-ratio: 1/1;
+      background-color: red;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    /* кот теперь привязан К БЛОКУ */
+    .cat {
+      position: absolute;
+      bottom: -10%;
+      right: -10%;
+      width: 40%;
+      height: auto;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .fadeCat {
+      opacity: 1;
+    }
+  }
+
+  /* ---------- Tablet (<=1024px) ---------- */
+  @media (max-width: 1024px) {
+    gap: 3rem;
+
+    &__buttons {
+      justify-content: flex-start;
+    }
+  }
+
+  /* ---------- Mobile (<=768px) ---------- */
+  @media (max-width: 768px) {
+    // flex-direction: column;
+    text-align: center;
+
+    &__buttons {
+      justify-content: center;
+      width: 100%;
+    }
+
+    // &__photo .block {
+    //   max-width: 300px;
+    // }
+
+    &__photo .cat {
+      width: 45%;
+      bottom: -12%;
+      right: -12%;
+    }
+  }
+
+  /* ---------- Small Mobile (<=480px) ---------- */
+  @media (max-width: 480px) {
+    .mainSection__text {
+      p {
+        margin: 1rem 0px;
+        opacity: 0.8;
+      }
+    }
+    &__buttons {
+      &_blue,
+      &_red {
+        width: 100%;
+
+        .icon {
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+        }
+      }
+    }
+
+    &__photo .block {
+      max-width: 240px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    &__photo .cat {
+      width: 40%;
+      bottom: -14%;
+      right: 4%;
+    }
+  }
+  @media (max-width: 380px) {
+    &__photo .cat {
+      right: -6%;
+    }
+  }
+}
