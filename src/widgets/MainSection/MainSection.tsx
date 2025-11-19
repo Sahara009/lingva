@@ -10,20 +10,32 @@ interface Props {
 
 export const MainSection: React.FC<Props> = ({ className }) => {
   const [activeCat, setActiveCat] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const cats = [cat1, cat2];
 
   useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      setMounted(true);
+    });
+
     const interval = setInterval(() => {
       setActiveCat((prev) => (prev === 0 ? 1 : 0));
-    }, 1000); // 1 секунда
+    }, 1000);
 
-    return () => clearInterval(interval);
+    return () => {
+      cancelAnimationFrame(frame);
+      clearInterval(interval);
+    };
   }, []);
 
   return (
     <div className={className}>
       <div className={styles.mainSection}>
-        <div className={styles.mainSection__text}>
+        <div
+          className={`${styles.mainSection__text} ${
+            mounted ? styles.appearText : ""
+          }`}
+        >
           <h1>
             Изучайте иностранные <br /> языки с <span>международной</span>
             <br />
@@ -45,7 +57,11 @@ export const MainSection: React.FC<Props> = ({ className }) => {
           </div>
         </div>
 
-        <div className={styles.mainSection__photo}>
+        <div
+          className={`${styles.mainSection__photo} ${
+            mounted ? styles.appearPhoto : ""
+          }`}
+        >
           <div className={styles.block}></div>
 
           <img

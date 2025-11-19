@@ -172,3 +172,33 @@
     }
   }
 }
+/* ====== ANIMATIONS ====== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.appearText {
+  animation: fadeUp 1s ease forwards;
+}
+
+.appearPhoto {
+  animation: slideInRight 1s ease forwards;
+}
