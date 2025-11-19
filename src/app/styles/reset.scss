@@ -1,8 +1,11 @@
+@import "./variables.scss";
+
 /* Reset and base styles  */
 * {
   padding: 0px;
   margin: 0px;
   border: none;
+  // border: 1px solid red;
 }
 
 *,
@@ -17,6 +20,7 @@ a,
 a:link,
 a:visited {
   text-decoration: none;
+  color: var(--color-primary);
 }
 
 a:hover {

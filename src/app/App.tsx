@@ -1,6 +1,6 @@
-import { Header } from "../widgets/header/ui/Header";
 import { AppRouter } from "./providers/router/AppRouter";
 import "./styles/reset.scss";
+import "./styles/main.scss";
 
 function App() {
   return (

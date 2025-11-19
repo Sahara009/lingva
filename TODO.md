@@ -1,0 +1,3 @@
+- [ ] Update Header.tsx: Add imports for lucide-react (Menu, X) and framer-motion (motion, AnimatePresence). Add state for menu open. Add burger button on mobile. Implement full-screen menu overlay with nav links and close button using Framer Motion animations.
+- [ ] Update Header.module.scss: Add styles for full-screen menu (fixed, full screen, background, positioning nav and close button).
+- [ ] Test the responsive header and burger menu functionality.
