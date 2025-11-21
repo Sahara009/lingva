@@ -4,6 +4,7 @@ import { WhoUs } from "../../../widgets/WhoUs/WhoUs";
 import { Blocks } from "../../../widgets/Blocks/Blocks";
 import { Countries } from "../../../widgets/Countries/Countries";
 import { Questions } from "../../../widgets/Questions/Questions";
+import { Values } from "../../../widgets/Values/Values";
 
 interface Props {
   className?: string;
@@ -18,6 +19,7 @@ export const HomePage: React.FC<Props> = ({ className }) => {
       {/* <MIssion /> */}
       <Countries />
       <Questions />
+      <Values />
     </div>
   );
 };

@@ -53,7 +53,7 @@ const Block: React.FC<BlockProps> = ({ imgSrc }) => {
 
   return (
     <motion.div
-      className={styles.blocks__block_1}
+      className={`${styles.blocks__block_1} ${hovered ? styles.hovered : ""}`}
       onMouseMove={(e) => {
         const rect = (
           e.currentTarget as HTMLDivElement
@@ -65,7 +65,7 @@ const Block: React.FC<BlockProps> = ({ imgSrc }) => {
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      variants={blockVariants} // добавили анимацию появления
+      variants={blockVariants}
     >
       {/* Inverted circular overlay */}
       {hovered && (
