@@ -48,8 +48,9 @@
 
 .preview {
   position: fixed;
-  //   width: 220px;
-  //   height: 160px;
+  max-width: 250px;
+  // height: 160px;
+  width: 100%;
   object-fit: cover;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -62,5 +63,45 @@
 @keyframes fadeIn {
   to {
     opacity: 1;
+  }
+}
+/* 📱 Мобильная сетка */
+.mobileGrid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.mobileCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 260px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+
+/* Скрываем hover-версию на мобильных (для безопасности) */
+@media (max-width: 768px) {
+  .countries {
+    display: none !important;
+  }
+  .preview {
+    display: none !important;
   }
 }
