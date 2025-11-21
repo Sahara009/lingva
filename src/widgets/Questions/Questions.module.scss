@@ -1,0 +1,137 @@
+.questions {
+  margin: 0 auto;
+  margin-top: 7rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+
+/* Контейнер FAQ */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 55%;
+  min-height: 200px; /* предотвращает дергание всей страницы */
+}
+
+.item {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  scroll-margin-top: 40px; /* чтобы не прыгало при клике */
+}
+
+.question {
+  background: var(--color-secondary);
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: background 0.2s ease;
+}
+
+.question:hover {
+  background: #d6ecff;
+}
+
+.arrow {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  background: white;
+  padding: 0 1.2rem;
+  transition: max-height 0.45s ease, padding 0.3s ease;
+  will-change: max-height; /* делает анимацию супер плавной */
+}
+
+.answer.open {
+  padding: 1rem 1.2rem;
+  max-height: 1000px; /* вместо 200px — плавность без рывков */
+}
+
+.answer p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* 🔥🔥 ADAPTIVE RESPONSIVE 🔥🔥 */
+
+@media (max-width: 1024px) {
+  .questions {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  .faq {
+    width: 100%;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .questions {
+    margin-top: 4rem;
+    padding: 0 1rem;
+
+    h2 {
+      font-size: 1.6rem;
+    }
+  }
+
+  .question {
+    font-size: 1rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .arrow {
+    font-size: 1.3rem;
+  }
+
+  .answer.open {
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .questions {
+    margin-top: 3rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .question {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .answer p {
+    font-size: 0.9rem;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
+  }
+}
