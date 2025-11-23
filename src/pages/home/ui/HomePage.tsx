@@ -2,12 +2,14 @@ import React from "react";
 import { MainSection } from "../../../widgets/MainSection/MainSection";
 import { WhoUs } from "../../../widgets/WhoUs/WhoUs";
 import { Blocks } from "../../../widgets/Blocks/Blocks";
-import { Countries } from "../../../widgets/Countries/Countries";
 import { Questions } from "../../../widgets/Questions/Questions";
 import { Values } from "../../../widgets/Values/Values";
 import { Services } from "../../../widgets/Services/Services";
 import FlowingMenu from "../../../widgets/FlowingMenu/FlowingMenu";
 import styles from "./HomePage.module.scss";
+import jordan from "../../../shared/assets/ahmad-qaisieh-mYEqvgcY1G4-unsplash.jpg";
+import turkiye from "../../../shared/assets/amador-loureiro-QtMM_VGPlek-unsplash.jpg";
+import oman from "../../../shared/assets/mostafa-meraji-29OZhYD3Nhc-unsplash.jpg";
 
 interface Props {
   className?: string;
@@ -16,23 +18,18 @@ interface Props {
 const demoItems = [
   {
     link: "#",
-    text: "Mojave",
-    image: "https://picsum.photos/600/400?random=1",
+    text: "Иордании",
+    image: jordan,
   },
   {
     link: "#",
-    text: "Sonoma",
-    image: "https://picsum.photos/600/400?random=2",
+    text: "Оман",
+    image: oman,
   },
   {
     link: "#",
-    text: "Monterey",
-    image: "https://picsum.photos/600/400?random=3",
-  },
-  {
-    link: "#",
-    text: "Sequoia",
-    image: "https://picsum.photos/600/400?random=4",
+    text: "Турция",
+    image: turkiye,
   },
 ];
 

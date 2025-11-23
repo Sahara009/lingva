@@ -12,15 +12,41 @@ interface FlowingMenuProps {
   items?: MenuItemProps[];
 }
 
+/* Хук для определения мобильного устройства */
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  return isMobile;
+};
+
 const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
   return (
-    <div className="menu-wrap">
-      <nav className="menu">
-        {items.map((item, idx) => (
-          <MenuItem key={idx} {...item} />
-        ))}
-      </nav>
-    </div>
+    <>
+      <div className="title">
+        <h2 className="title__main">Страны сотрудничевства</h2>
+        <p className="title__desc">
+          Хотите практиковать язык там, где он является частью повседневной
+          жизни? Наши программы стажировок в Иордании, Омане и Турции дают
+          возможность учиться через реальное общение и яркие культурные
+          открытия.
+        </p>
+      </div>
+
+      <div className="menu-wrap">
+        <nav className="menu">
+          {items.map((item, idx) => (
+            <MenuItem key={idx} {...item} />
+          ))}
+        </nav>
+      </div>
+    </>
   );
 };
 
@@ -28,6 +54,8 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
   const itemRef = React.useRef<HTMLDivElement>(null);
   const marqueeRef = React.useRef<HTMLDivElement>(null);
   const marqueeInnerRef = React.useRef<HTMLDivElement>(null);
+
+  const isMobile = useIsMobile();
 
   const animationDefaults: gsap.TweenVars = { duration: 0.6, ease: "expo" };
 
@@ -48,9 +76,20 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
     return topEdgeDist < bottomEdgeDist ? "top" : "bottom";
   };
 
+  /** На мобильном всегда показываем анимацию */
+  React.useEffect(() => {
+    if (isMobile && marqueeRef.current && marqueeInnerRef.current) {
+      gsap.set(marqueeRef.current, { y: "0%" });
+      gsap.set(marqueeInnerRef.current, { y: "0%" });
+    }
+  }, [isMobile]);
+
   const handleMouseEnter = (ev: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isMobile) return; // отключено на мобильных
+
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current)
       return;
+
     const rect = itemRef.current.getBoundingClientRect();
     const x = ev.clientX - rect.left;
     const y = ev.clientY - rect.top;
@@ -63,8 +102,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
   };
 
   const handleMouseLeave = (ev: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isMobile) return; // отключено на мобильных
+
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current)
       return;
+
     const rect = itemRef.current.getBoundingClientRect();
     const x = ev.clientX - rect.left;
     const y = ev.clientY - rect.top;
@@ -100,6 +142,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
       >
         {text}
       </a>
+
       <div className="marquee" ref={marqueeRef}>
         <div className="marquee__inner-wrap" ref={marqueeInnerRef}>
           <div className="marquee__inner" aria-hidden="true">
