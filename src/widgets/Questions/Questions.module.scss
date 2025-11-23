@@ -1,6 +1,6 @@
 .questions {
   margin: 0 auto;
-  margin-top: 7rem;
+  margin-top: 9rem;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
@@ -38,7 +38,7 @@
   justify-content: space-between;
   align-items: center;
 
-  transition: background 0.2s ease;
+  transition: background 0.3s ease;
 }
 
 .question:hover {
@@ -55,8 +55,8 @@
   overflow: hidden;
   background: white;
   padding: 0 1.2rem;
-  transition: max-height 0.45s ease, padding 0.3s ease;
-  will-change: max-height; /* делает анимацию супер плавной */
+  transition: padding 0.3s ease;
+  will-change: max-height;
 }
 
 .answer.open {
