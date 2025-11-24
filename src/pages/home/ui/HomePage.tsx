@@ -10,6 +10,7 @@ import styles from "./HomePage.module.scss";
 import jordan from "../../../shared/assets/ahmad-qaisieh-mYEqvgcY1G4-unsplash.jpg";
 import turkiye from "../../../shared/assets/amador-loureiro-QtMM_VGPlek-unsplash.jpg";
 import oman from "../../../shared/assets/mostafa-meraji-29OZhYD3Nhc-unsplash.jpg";
+import { Form } from "../../../widgets/Form/Form";
 
 interface Props {
   className?: string;
@@ -46,6 +47,7 @@ export const HomePage: React.FC<Props> = ({ className }) => {
       <Questions />
       <Values />
       <Services />
+      <Form />
     </div>
   );
 };

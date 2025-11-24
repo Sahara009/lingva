@@ -13,16 +13,32 @@ interface Props {
 export const Header: React.FC<Props> = ({ className }) => {
   const [animate, setAnimate] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setAnimate(true), 100);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <div className={className}>
-      <div className={styles.header}>
+      {isSticky && <div className={styles.placeholder}></div>}
+
+      <div className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
         <img
           src={logo}
           alt="Lingva Logo"

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./Services.module.scss";
-import { ShieldCheck } from "lucide-react";
+import { Earth, GraduationCap, ShieldCheck } from "lucide-react";
 import amirica from "../../shared/assets/amirica.png";
 import arabian from "../../shared/assets/arabian.png";
 import turkiye from "../../shared/assets/turkiyeIcon.png";
@@ -33,7 +33,7 @@ export const Services: React.FC<Props> = ({ className }) => {
             }`}
             onClick={() => setActiveTab("internship")}
           >
-            Стажировка <ShieldCheck />
+            Стажировка <Earth />
           </button>
 
           <button
@@ -42,7 +42,7 @@ export const Services: React.FC<Props> = ({ className }) => {
             }`}
             onClick={() => setActiveTab("courses")}
           >
-            Курсы <ShieldCheck />
+            Курсы <GraduationCap />
           </button>
 
           <button
