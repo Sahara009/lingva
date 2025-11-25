@@ -1,7 +1,6 @@
 import React from "react";
 import { MainSection } from "../../../widgets/MainSection/MainSection";
 import { WhoUs } from "../../../widgets/WhoUs/WhoUs";
-import { Blocks } from "../../../widgets/Blocks/Blocks";
 import { Questions } from "../../../widgets/Questions/Questions";
 import { Values } from "../../../widgets/Values/Values";
 import { Services } from "../../../widgets/Services/Services";
@@ -11,6 +10,8 @@ import jordan from "../../../shared/assets/ahmad-qaisieh-mYEqvgcY1G4-unsplash.jp
 import turkiye from "../../../shared/assets/amador-loureiro-QtMM_VGPlek-unsplash.jpg";
 import oman from "../../../shared/assets/mostafa-meraji-29OZhYD3Nhc-unsplash.jpg";
 import { Form } from "../../../widgets/Form/Form";
+import { Blocks } from "../../../widgets/Blocks/Blocks";
+import { Partnership } from "../../../widgets/Partnership/Partnership";
 
 interface Props {
   className?: string;
@@ -40,13 +41,16 @@ export const HomePage: React.FC<Props> = ({ className }) => {
       <MainSection />
       <WhoUs />
       <Blocks />
-      {/* <Countries /> */}
+
       <div className={styles.fullWidth} style={{ height: "100vh" }}>
         <FlowingMenu items={demoItems} />
       </div>
-      <Questions />
       <Values />
       <Services />
+      {/* <Mission /> */}
+      <Partnership />
+
+      <Questions />
       <Form />
     </div>
   );

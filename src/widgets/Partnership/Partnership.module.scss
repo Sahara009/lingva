@@ -1,0 +1,86 @@
+.partnership {
+  margin-top: 7rem;
+  background: gray;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  &__wrapper {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    p {
+      margin: 2rem 0rem;
+      font-weight: 500;
+    }
+    button {
+      padding: 15px 25px;
+      border-radius: 30px;
+      background-color: var(--color-primary);
+      color: #fff;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #0b5575;
+      }
+    }
+  }
+}
+
+// Медиа-запросы для адаптивности
+@media (max-width: 768px) {
+  // Для планшетов
+  .partnership {
+    padding: 1rem; // Уменьшаем отступы
+    margin-top: 5rem; // Уменьшаем верхний отступ
+    &__wrapper {
+      padding: 1.5rem; // Уменьшаем внутренние отступы
+      max-width: 90%; // Увеличиваем ширину до 90%
+
+      h2 {
+        font-size: 1.5rem; // Уменьшаем размер заголовка
+      }
+      p {
+        margin: 1.5rem 0; // Уменьшаем отступы между абзацами
+      }
+      button {
+        padding: 10px 20px; // Уменьшаем размер кнопки
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  // Для мобильных устройств
+  .partnership {
+    background-color: transparent;
+    padding: 0rem; // Еще меньше отступы
+    margin-top: 3rem; // Уменьшаем верхний отступ
+
+    &__wrapper {
+      padding: 1rem; // Еще меньше внутренние отступы
+      max-width: 100%; // Увеличиваем ширину до 95%
+
+      h2 {
+        font-size: 1.5rem;
+        text-align: center; // Уменьшаем размер заголовка
+      }
+      p {
+        margin: 1.5rem 0; // Уменьшаем отступы между абзацами
+      }
+      button {
+        padding: 8px 15px; // Уменьшаем размер кнопки
+        font-size: 14px;
+      }
+    }
+  }
+}
