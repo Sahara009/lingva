@@ -1,0 +1,209 @@
+.tabs {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+  --pastel-pink: #ffd6e8;
+  --pastel-blue: #d7ecff;
+  --pastel-yellow: #fff5c8;
+  --pastel-purple: #e8d9ff;
+  --pastel-green: #d9ffef;
+
+  --soft-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  &__first,
+  &__two,
+  &__four {
+    border-radius: 14px;
+    padding: 1.5rem;
+    background: var(--color-background);
+    box-shadow: var(--soft-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    border: 1px solid var(--color-primary);
+
+    h3 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__first {
+    background-color: var(--pastel-pink);
+  }
+
+  &__two {
+    background-color: var(--pastel-blue);
+  }
+  &__three {
+    div {
+      border: 1px solid var(--color-primary);
+      border-radius: 14px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+
+    div {
+      background: var(--pastel-yellow);
+      padding: 2rem 0rem 2rem 1rem;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  &__four {
+    background: var(--pastel-purple);
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: space-between;
+    position: relative; // Для абсолютного позиционирования иконок
+
+    .iconContainer {
+      margin-top: 1rem;
+
+      opacity: 0; // Начальное состояние невидимо
+      animation: fadeIn 0.5s forwards; // Анимация появления
+
+      &.fadeOut {
+        animation: fadeOut 0.5s forwards; // Анимация исчезновения
+      }
+    }
+
+    img {
+      width: 40px;
+      // margin-top: 1rem;
+      height: 40px;
+      margin-bottom: 0.6rem;
+      animation: float 3s ease-in-out infinite;
+    }
+  }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Мягкое покачивание изображения */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* ============================
+    АДАПТИВ ДЛЯ ПЛАНШЕТОВ
+   ============================ */
+@media (max-width: 1024px) {
+  .tabs {
+    gap: 1rem;
+
+    &__first,
+    &__two,
+    &__four {
+      padding: 1.2rem;
+
+      h3 {
+        font-size: 2.4rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &__three div {
+      padding: 1.5rem 0rem 1.5rem 1rem;
+    }
+  }
+}
+
+/* ============================
+      АДАПТИВ ДЛЯ МОБИЛОК
+     ============================ */
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    &__first,
+    &__two,
+    &__four {
+      width: 100%;
+      padding: 1.2rem 1rem;
+
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__four {
+      flex-direction: row;
+      align-items: center;
+      padding: 2rem 1rem;
+      gap: 1rem;
+      .iconContainer {
+        margin-top: 0rem;
+      }
+    }
+    &__three {
+      gap: 0.8rem;
+      display: flex;
+      flex-direction: row;
+
+      div {
+        width: 100%;
+        padding: 1.2rem 1rem;
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+/* ============================
+     СУПЕР-МАЛЕНЬКИЕ ЭКРАНЫ
+     ============================ */
+@media (max-width: 480px) {
+  .tabs {
+    gap: 1rem;
+
+    &__first,
+    &__two,
+    &__four {
+      h3 {
+        font-size: 2rem;
+      }
+    }
+  }
+}

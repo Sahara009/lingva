@@ -12,6 +12,7 @@ import oman from "../../../shared/assets/mostafa-meraji-29OZhYD3Nhc-unsplash.jpg
 import { Form } from "../../../widgets/Form/Form";
 import { Blocks } from "../../../widgets/Blocks/Blocks";
 import { Partnership } from "../../../widgets/Partnership/Partnership";
+import { Tabs } from "../../../widgets/Tabs/Tabs";
 
 interface Props {
   className?: string;
@@ -41,7 +42,7 @@ export const HomePage: React.FC<Props> = ({ className }) => {
       <MainSection />
       <WhoUs />
       <Blocks />
-
+      <Tabs />
       <div className={styles.fullWidth} style={{ height: "100vh" }}>
         <FlowingMenu items={demoItems} />
       </div>
