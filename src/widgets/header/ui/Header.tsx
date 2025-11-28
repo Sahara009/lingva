@@ -5,6 +5,7 @@ import logo from "../../../shared/assets/snapedit_1763204574005 1.png";
 import whatsapp from "../../../shared/assets/whatsapp.svg";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
+import { Drawer } from "../../../shared/ui/Drawer/Drawer";
 
 interface Props {
   className?: string;
@@ -13,6 +14,7 @@ interface Props {
 export const Header: React.FC<Props> = ({ className }) => {
   const [animate, setAnimate] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
@@ -60,7 +62,9 @@ export const Header: React.FC<Props> = ({ className }) => {
             className={`${styles.link} ${animate ? styles.fadeIn : ""}`}
             style={{ animationDelay: "0.3s" }}
           >
-            Сотрудничество
+            <button className={styles.link} onClick={() => setDrawerOpen(true)}>
+              Контакты
+            </button>
           </Link>
           <Link
             to={"/"}
@@ -88,7 +92,7 @@ export const Header: React.FC<Props> = ({ className }) => {
             className={`${styles.link} ${animate ? styles.fadeIn : ""}`}
             style={{ animationDelay: "0.7s" }}
           >
-            Магазин
+            Каталог
           </Link>
         </nav>
         <div
@@ -136,7 +140,12 @@ export const Header: React.FC<Props> = ({ className }) => {
                 Главная
               </Link>
               <Link to="/" onClick={toggleMenu}>
-                Сотрудничество
+                <button
+                  className={styles.link}
+                  onClick={() => setDrawerOpen(true)}
+                >
+                  Контакты
+                </button>
               </Link>
               <Link to="/" onClick={toggleMenu}>
                 Курсы
@@ -164,6 +173,7 @@ export const Header: React.FC<Props> = ({ className }) => {
           </motion.div>
         )}
       </AnimatePresence>
+      <Drawer isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)} />
     </div>
   );
 };

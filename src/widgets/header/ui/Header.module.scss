@@ -9,6 +9,7 @@ $transition-delay: 0.05s;
   position: relative;
   width: 100%;
   padding: 0px 0px 10px;
+  z-index: 100;
   border-bottom: 1px solid var(--color-primary);
 
   @media (max-width: 1024px) {
@@ -38,6 +39,7 @@ $transition-delay: 0.05s;
   position: relative;
   color: inherit;
   text-decoration: none;
+  // color: var(--color-primary);
 
   &::after {
     content: "";
@@ -138,6 +140,7 @@ $transition-delay: 0.05s;
   transform: translateY(-20px);
   transition: 0.4s;
   display: flex;
+  z-index: 100;
   flex-direction: column;
   gap: 20px;
 
@@ -194,7 +197,7 @@ $transition-delay: 0.05s;
   align-items: center;
   // justify-content: center;
   padding-top: 9rem;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .closeButton {
@@ -216,7 +219,7 @@ $transition-delay: 0.05s;
 
   a,
   button {
-    color: #ec7263;
+    // color: #ec7263;
     font-size: 24px;
     text-decoration: none;
     background: none;
@@ -262,7 +265,7 @@ $transition-delay: 0.05s;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   border-bottom: none;
 
-  z-index: 999;
+  z-index: 309;
 }
 @media (max-width: 1024px) {
   .sticky {
