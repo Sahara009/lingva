@@ -13,6 +13,7 @@ import { Form } from "../../../widgets/Form/Form";
 import { Blocks } from "../../../widgets/Blocks/Blocks";
 import { Partnership } from "../../../widgets/Partnership/Partnership";
 import { Tabs } from "../../../widgets/Tabs/Tabs";
+import ForWhomSection from "../../../widgets/ForWhomSection/ForWhomSection";
 
 interface Props {
   className?: string;
@@ -43,6 +44,7 @@ export const HomePage: React.FC<Props> = ({ className }) => {
       <WhoUs />
       <Blocks />
       <Tabs />
+      <ForWhomSection />
       <div className={styles.fullWidth} style={{ height: "100vh" }}>
         <FlowingMenu items={demoItems} />
       </div>
