@@ -14,6 +14,7 @@ import { Blocks } from "../../../widgets/Blocks/Blocks";
 import { Partnership } from "../../../widgets/Partnership/Partnership";
 import { Tabs } from "../../../widgets/Tabs/Tabs";
 import ForWhomSection from "../../../widgets/ForWhomSection/ForWhomSection";
+import { JourneyMapSection } from "../../../widgets/JorneyMapSection/JorneyMapSection";
 
 interface Props {
   className?: string;
@@ -42,9 +43,11 @@ export const HomePage: React.FC<Props> = ({ className }) => {
     <div className={className}>
       <MainSection />
       <WhoUs />
+      <JourneyMapSection />
       <Blocks />
       <Tabs />
       <ForWhomSection />
+
       <div className={styles.fullWidth} style={{ height: "100vh" }}>
         <FlowingMenu items={demoItems} />
       </div>
