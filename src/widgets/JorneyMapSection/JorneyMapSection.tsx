@@ -50,11 +50,12 @@ const positions = [
 
 export const JourneyMapSection: React.FC = () => {
   const pathRef = useRef<SVGPathElement | null>(null);
+  const stepRefs = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
+    // Анимация SVG path
     if (pathRef.current) {
       const pathLength = pathRef.current.getTotalLength();
-      console.log(pathLength);
 
       gsap.set(pathRef.current, {
         strokeDasharray: pathLength,
@@ -63,7 +64,7 @@ export const JourneyMapSection: React.FC = () => {
 
       gsap.to(pathRef.current, {
         strokeDashoffset: 0,
-        duration: 1,
+        duration: 15,
         scrollTrigger: {
           trigger: pathRef.current,
           start: "top 30%",
@@ -72,6 +73,28 @@ export const JourneyMapSection: React.FC = () => {
         },
       });
     }
+
+    // Анимация карточек
+    stepRefs.current.forEach((el, index) => {
+      gsap.fromTo(
+        el,
+        { autoAlpha: 0, y: 50, scale: 0.9 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "top 50%",
+            toggleActions: "play none none reverse",
+          },
+          delay: index * 0.1, // легкая последовательность
+        }
+      );
+    });
   }, []);
 
   return (
@@ -86,7 +109,14 @@ export const JourneyMapSection: React.FC = () => {
             <div
               key={index}
               className={style.step}
-              style={{ top: positions[index].top, left: positions[index].left }}
+              ref={(el) => {
+                if (el) stepRefs.current[index] = el;
+              }}
+              style={{
+                top: positions[index].top,
+                left: positions[index].left,
+                transform: `rotate(${positions[index].rotate})`,
+              }}
             >
               <div className={style.icon}>{step.icon}</div>
               <h3>{step.title}</h3>
