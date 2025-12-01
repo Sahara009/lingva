@@ -10,6 +10,13 @@
       font-size: 2rem;
       text-align: center;
       font-weight: 700;
+
+      @media (max-width: 768px) {
+        // font-weight: 700;
+        padding: 0 5px;
+        font-size: 1.4em;
+        margin-bottom: 1rem;
+      }
     }
     p {
       text-align: center;
@@ -17,6 +24,9 @@
       max-width: 600px;
       font-size: 18px;
       opacity: 0.8;
+
+      font-size: 14px;
+      padding: 0 0px 1rem 0px;
       span {
         font-weight: 700;
       }

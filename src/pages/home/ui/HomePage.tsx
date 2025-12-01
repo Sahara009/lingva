@@ -15,6 +15,8 @@ import { Partnership } from "../../../widgets/Partnership/Partnership";
 import { Tabs } from "../../../widgets/Tabs/Tabs";
 import ForWhomSection from "../../../widgets/ForWhomSection/ForWhomSection";
 import { JourneyMapSection } from "../../../widgets/JorneyMapSection/JorneyMapSection";
+import { useIsMobile } from "../../../lib/useIsMobile";
+import { JourneyMapMobile } from "../../../widgets/JorneyMapSection/JourneyMapMobile";
 
 interface Props {
   className?: string;
@@ -39,11 +41,12 @@ const demoItems = [
 ];
 
 export const HomePage: React.FC<Props> = ({ className }) => {
+  const isMobile = useIsMobile(1000);
   return (
     <div className={className}>
       <MainSection />
       <WhoUs />
-      <JourneyMapSection />
+      {isMobile ? <JourneyMapMobile /> : <JourneyMapSection />}
       <Blocks />
       <Tabs />
       <ForWhomSection />

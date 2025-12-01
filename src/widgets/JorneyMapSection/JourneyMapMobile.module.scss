@@ -1,0 +1,58 @@
+.mobileWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+}
+
+.step {
+  display: flex;
+  gap: 16px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.info p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+.mainTitle {
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    // font-weight: 700;
+    padding: 0 5px;
+    font-size: 1.4em;
+    margin-bottom: 1rem;
+  }
+}
+.subtitle {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 0 0px 1rem 0px;
+  }
+}

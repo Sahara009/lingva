@@ -11,13 +11,14 @@
 
 .step {
   position: absolute;
-  width: 200px;
+  width: 350px;
   padding: 15px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s;
+  z-index: 700;
 
   &:hover {
     transform: translateY(-10px);
@@ -26,7 +27,7 @@
   .icon {
     font-size: 36px;
     margin-bottom: 10px;
-    color: #4f46e5; // можно менять цвет иконок
+    color: var(--color-primary); // можно менять цвет иконок
   }
 
   h3 {
@@ -49,8 +50,38 @@
   justify-content: center;
   width: 100%;
   height: 2042px;
+  z-index: 50;
 
   svg {
     height: 100%;
+  }
+}
+
+.mainTitle {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-top: 8rem;
+  z-index: 600;
+  // position: relative;
+  @media (max-width: 768px) {
+    font-weight: 700;
+    padding: 0 5px;
+    font-size: 1.4em;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+  }
+}
+.subtitle {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 0 5px;
+    padding-bottom: -2rem;
   }
 }
