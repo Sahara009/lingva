@@ -1,0 +1,77 @@
+.cards-container {
+  position: relative;
+  height: 550px;
+  overflow: hidden;
+  width: 100%;
+  margin: 50px 0;
+}
+.title {
+  text-align: center;
+  margin-top: 7rem;
+  margin-bottom: -3rem;
+}
+
+.title__main {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.title__desc {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+.title__desc span {
+  font-weight: 700;
+}
+
+.card {
+  position: absolute;
+  width: 350px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.card:nth-child(2) {
+  z-index: 2;
+}
+
+.card:nth-child(3) {
+  z-index: 3;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 150px;
+  }
+}
+
+/* ----- МОБИЛЬНАЯ ВЕРСИЯ ----- */
+@media (max-width: 768px) {
+  .title {
+    padding: 0px 5px 0px 5px;
+  }
+
+  .title__main {
+    font-weight: 700;
+    padding: 0 5px;
+    font-size: 1.4em;
+    margin-bottom: 1rem;
+  }
+
+  .title__desc {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+}
