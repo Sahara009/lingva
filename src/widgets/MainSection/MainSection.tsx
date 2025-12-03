@@ -3,6 +3,7 @@ import styles from "./MainSection.module.scss";
 import { MoveUpRight } from "lucide-react";
 import cat1 from "../../shared/assets/cat1.png";
 import cat2 from "../../shared/assets/cat4.png";
+import { FallingIcons } from "../../shared/ui/FallingIcons/FallingIcons";
 
 interface Props {
   className?: string;
@@ -31,6 +32,7 @@ export const MainSection: React.FC<Props> = ({ className }) => {
   return (
     <div className={className}>
       <div className={styles.mainSection}>
+        <FallingIcons />
         <div
           className={`${styles.mainSection__text} ${
             mounted ? styles.appearText : ""

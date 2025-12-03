@@ -1,0 +1,26 @@
+.container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.icon {
+  position: absolute;
+  top: -15%;
+  color: var(--color-accent);
+
+  animation-name: fall;
+  //   opacity: 0.3;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(130vh) rotate(360deg);
+  }
+}
