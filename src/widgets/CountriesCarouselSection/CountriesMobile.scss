@@ -1,0 +1,120 @@
+.cards-mobile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  padding: 16px;
+}
+
+.card-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    z-index: 10;
+  }
+
+  img {
+    width: 100%;
+    max-width: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  &__title {
+    margin-top: 0px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    pointer-events: none;
+    transform: rotate(20deg);
+  }
+}
+
+// Разброс и разные наклоны
+.card-mobile:nth-child(1) {
+  transform: rotate(-5deg) translateX(-10px);
+}
+.card-mobile:nth-child(2) {
+  transform: rotate(3deg) translateX(8px);
+}
+.card-mobile:nth-child(3) {
+  transform: rotate(-2deg) translateX(-5px);
+}
+.card-mobile__title {
+  position: relative;
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.underline {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.card-mobile__title {
+  position: relative;
+  margin-top: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+/* ----- МОБИЛЬНАЯ ВЕРСИЯ ----- */
+@media (max-width: 768px) {
+  .title {
+    padding: 0px 5px 0px 5px;
+    margin-top: 2rem;
+  }
+
+  .title__main {
+    font-weight: 700;
+    padding: 0 5px;
+    font-size: 1.4em;
+    margin-bottom: 1rem;
+  }
+
+  .title__desc {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+}

@@ -12,6 +12,7 @@ import { JourneyMapSection } from "../../../widgets/JorneyMapSection/JorneyMapSe
 import { useIsMobile } from "../../../lib/useIsMobile";
 import { JourneyMapMobile } from "../../../widgets/JorneyMapSection/JourneyMapMobile";
 import { Cards } from "../../../widgets/CountriesCarouselSection/CountriesCarouselSection";
+import { CardsMobile } from "../../../widgets/CountriesCarouselSection/CountriesMobile";
 
 interface Props {
   className?: string;
@@ -28,7 +29,7 @@ export const HomePage: React.FC<Props> = ({ className }) => {
       <Tabs />
       <ForWhomSection />
 
-      <Cards />
+      {isMobile ? <CardsMobile /> : <Cards />}
       <Values />
       <Services />
       {/* <Mission /> */}

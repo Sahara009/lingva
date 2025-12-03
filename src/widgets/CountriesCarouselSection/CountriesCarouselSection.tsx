@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useIsMobile } from "../../lib/useIsMobile";
@@ -21,22 +21,43 @@ export const Cards = () => {
 
   useEffect(() => {
     const cardElements = cardsRef.current?.querySelectorAll(".card");
-
-    if (!cardElements || cardElements.length < 3) return;
-
-    const card2 = cardElements[1] as HTMLElement;
-    const card3 = cardElements[2] as HTMLElement;
+    if (!cardElements) return;
 
     if (isMobile) {
-      // на мобильных слегка разъезжаем карточки
-      const mobileSlide = 20; // px
-      const mobileRotation = 2; // градусы
+      // --- Мобильная версия: карточки в колонну с анимацией вспышки ---
+      cardElements.forEach((card) => {
+        gsap.set(card, { opacity: 0, scale: 0.9 });
 
-      gsap.set(card2, { x: -mobileSlide, rotation: -mobileRotation });
-      gsap.set(card3, { x: mobileSlide, rotation: mobileRotation });
+        ScrollTrigger.create({
+          trigger: card,
+          start: "top 90%",
+          end: "top 70%",
+          onEnter: () => {
+            gsap.to(card, {
+              opacity: 1,
+              scale: 1,
+              duration: 0.5,
+              ease: "power2.out",
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(card, {
+              opacity: 0,
+              scale: 0.9,
+              duration: 0.5,
+              ease: "power2.out",
+            });
+          },
+        });
+      });
     } else {
-      const slideDistance = 300;
+      // --- Десктопная версия: текущая анимация ---
+      if (cardElements.length < 3) return;
 
+      const card2 = cardElements[1] as HTMLElement;
+      const card3 = cardElements[2] as HTMLElement;
+
+      const slideDistance = 300;
       gsap.set(card2, { x: 0 });
       gsap.set(card3, { x: 0 });
 
@@ -52,24 +73,23 @@ export const Cards = () => {
             x: -slideDistance * progress,
             rotation: -8 * progress,
           });
-
           gsap.set(card3, {
             x: slideDistance * progress,
             rotation: 8 * progress,
           });
         },
       });
-    }
 
-    // Hover scale с GSAP
-    cardElements.forEach((card) => {
-      card.addEventListener("mouseenter", () => {
-        gsap.to(card, { scale: 1.09, duration: 0.3 });
+      // Hover scale для ПК
+      cardElements.forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+          gsap.to(card, { scale: 1.09, duration: 0.3 });
+        });
+        card.addEventListener("mouseleave", () => {
+          gsap.to(card, { scale: 1, duration: 0.3 });
+        });
       });
-      card.addEventListener("mouseleave", () => {
-        gsap.to(card, { scale: 1, duration: 0.3 });
-      });
-    });
+    }
   }, [isMobile]);
 
   return (
