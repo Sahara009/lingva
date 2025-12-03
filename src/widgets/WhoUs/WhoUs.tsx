@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type ReactNode } from "react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styles from "./WhoUs.module.scss";
@@ -7,7 +7,7 @@ import catAvatar from "../../shared/assets/catAvatar.png";
 
 interface Message {
   id: number;
-  text: string;
+  text: string | ReactNode; // Измените тип text на JSX.Element для поддержки списка
   from: "user" | "cat";
 }
 
@@ -26,7 +26,20 @@ export const WhoUs: React.FC<Props> = ({ className }) => {
     { id: 3, text: "А чем вы занимаетесь?", from: "user" },
     {
       id: 4,
-      text: "Мы объединяем четыре направления:  \n • онлайн-обучение по арабскому, английскому и турецкому; \n • профильная литература и учебные материалы; \n • программы обучения и стажировок за рубежом; \n • онлайн-сертификация и определение уровня владения языком (A1–C2).",
+      text: (
+        <>
+          <p>Мы объединяем четыре направления:</p>
+          <ul>
+            <li>• онлайн-обучение по арабскому, английскому и турецкому;</li>
+            <li>• профильная литература и учебные материалы;</li>
+            <li>• программы обучения и стажировок за рубежом;</li>
+            <li>
+              • онлайн-сертификация и определение уровня владения языком
+              (A1–C2).
+            </li>
+          </ul>
+        </>
+      ),
       from: "cat",
     },
     {
