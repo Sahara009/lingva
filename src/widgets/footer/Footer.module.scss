@@ -55,6 +55,12 @@
       flex-direction: column;
       gap: 10px;
 
+      &_icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+      }
       h4 {
         font-weight: 900;
       }
@@ -120,11 +126,19 @@
 @media (max-width: 950px) {
   .footer {
     margin-top: 2rem;
-
+    padding: 7px;
     margin-bottom: 0.3rem;
+
+    &__down {
+      margin-top: 30px;
+    }
 
     &__up {
       flex-direction: column;
+
+      &_more {
+        margin: 0 auto;
+      }
 
       &_logo {
         img {
@@ -135,8 +149,9 @@
       &_list {
         width: 100%;
         display: flex;
-        justify-content: start;
-
+        justify-content: center;
+        // justify-content: start;
+        margin: 0 auto;
         flex-wrap: wrap;
       }
     }

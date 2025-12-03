@@ -22,7 +22,6 @@
     box-shadow: var(--soft-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: default;
-    // border: 1px solid var(--color-primary);
 
     h3 {
       font-size: 3rem;
@@ -40,7 +39,6 @@
   }
   &__three {
     div {
-      // border: 1px solid var(--color-primary);
       border-radius: 14px;
     }
 
