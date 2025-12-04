@@ -1,0 +1,51 @@
+.carouselContainer {
+  overflow-x: auto;
+  width: 100%;
+  padding: 1rem 0;
+  margin-bottom: 4rem;
+  -webkit-overflow-scrolling: touch; // плавный скролл на iOS
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.carouselContainer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.title {
+  font-size: 2rem;
+  margin-top: 3rem !important;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 1rem; // расстояние между карточками
+  padding: 0 1rem;
+}
+
+.card {
+  flex: 0 0 auto; // фиксированная ширина карточки
+  width: 180px;
+  aspect-ratio: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
