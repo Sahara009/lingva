@@ -15,6 +15,7 @@ import { Cards } from "../../../widgets/CountriesCarouselSection/CountriesCarous
 import { CardsMobile } from "../../../widgets/CountriesCarouselSection/CountriesMobile";
 import BounceCards from "../../../widgets/BounceCards/BounceCards";
 import BounceCardsMobile from "../../../widgets/BounceCards/BounceCardsMobile";
+import { CertificationSection } from "../../../widgets/CertificationSection/CertificationSection";
 
 interface Props {
   className?: string;
@@ -51,6 +52,7 @@ export const HomePage: React.FC<Props> = ({ className }) => {
       <Services />
       {/* <Mission /> */}
       <Partnership />
+
       {isMobile ? (
         <BounceCardsMobile images={images} />
       ) : (
@@ -66,7 +68,7 @@ export const HomePage: React.FC<Props> = ({ className }) => {
           enableHover={false}
         />
       )}
-
+      <CertificationSection />
       <Questions />
       <Form />
     </div>
