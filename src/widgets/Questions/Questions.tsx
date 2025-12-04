@@ -35,8 +35,9 @@ export const Questions: React.FC<Props> = ({ className }) => {
     <div className={className}>
       <div className={styles.questions}>
         <h2>
-          Частые <br />
-          вопросы
+          Часто <br />
+          задаваемые
+          <br /> вопросы
         </h2>
 
         <div className={styles.faq}>
