@@ -6,6 +6,8 @@ import whatsapp from "../../../shared/assets/whatsapp.svg";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import { Drawer } from "../../../shared/ui/Drawer/Drawer";
+import { RegisterDrawer } from "../../../features/Authorization/ui/RegisterDrawer/RegisterDrawer";
+import { LoginDrawer } from "../../../features/Authorization/ui/LoginDrawer/LoginDrawer";
 
 interface Props {
   className?: string;
@@ -16,6 +18,10 @@ export const Header: React.FC<Props> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+
+  // login / register drawers
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setAnimate(true), 100);
@@ -40,12 +46,29 @@ export const Header: React.FC<Props> = ({ className }) => {
     <div className={className}>
       {isSticky && <div className={styles.placeholder}></div>}
 
+      {/* LOGIN DRAWER */}
+      <LoginDrawer
+        isOpen={isLoginOpen}
+        onClose={() => setIsLoginOpen(false)}
+        onSwitchToRegister={() => {
+          setIsLoginOpen(false);
+          setIsRegisterOpen(true);
+        }}
+      />
+
+      {/* REGISTER DRAWER */}
+      <RegisterDrawer
+        isOpen={isRegisterOpen}
+        onClose={() => setIsRegisterOpen(false)}
+      />
+
       <div className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
         <img
           src={logo}
           alt="Lingva Logo"
           className={`${styles.header__logo} ${animate ? styles.fadeIn : ""}`}
         />
+
         <nav
           className={`${styles.list} ${animate ? styles.fadeIn : ""}`}
           style={{ animationDelay: "0.2s" }}
@@ -57,6 +80,7 @@ export const Header: React.FC<Props> = ({ className }) => {
           >
             Главная
           </Link>
+
           <Link
             to={"/"}
             className={`${styles.link} ${animate ? styles.fadeIn : ""}`}
@@ -66,13 +90,15 @@ export const Header: React.FC<Props> = ({ className }) => {
               Контакты
             </button>
           </Link>
+
           <Link
-            to={"/"}
+            to={"/courses"}
             className={`${styles.link} ${animate ? styles.fadeIn : ""}`}
             style={{ animationDelay: "0.4s" }}
           >
             Курсы
           </Link>
+
           <Link
             to={"/"}
             className={`${styles.link} ${animate ? styles.fadeIn : ""}`}
@@ -80,6 +106,7 @@ export const Header: React.FC<Props> = ({ className }) => {
           >
             Стажировка
           </Link>
+
           <Link
             to={"/"}
             className={`${styles.link} ${animate ? styles.fadeIn : ""}`}
@@ -87,6 +114,7 @@ export const Header: React.FC<Props> = ({ className }) => {
           >
             Сертификация
           </Link>
+
           <Link
             to={"/"}
             className={`${styles.link} ${animate ? styles.fadeIn : ""}`}
@@ -95,6 +123,7 @@ export const Header: React.FC<Props> = ({ className }) => {
             Каталог
           </Link>
         </nav>
+
         <div
           className={`${styles.buttons} ${animate ? styles.fadeIn : ""}`}
           style={{ animationDelay: "0.8s" }}
@@ -107,13 +136,18 @@ export const Header: React.FC<Props> = ({ className }) => {
               style={{ animationDelay: "0.9s" }}
             />
           </Link>
+
+          {/* ВОЙТИ — открывает LoginDrawer */}
           <button
             className={`${styles.button} ${animate ? styles.fadeIn : ""}`}
             style={{ animationDelay: "1s" }}
+            onClick={() => setIsLoginOpen(true)}
           >
             Войти
           </button>
         </div>
+
+        {/* BURGER */}
         <button
           className={`${styles.burger} ${animate ? styles.fadeIn : ""}`}
           onClick={toggleMenu}
@@ -123,6 +157,7 @@ export const Header: React.FC<Props> = ({ className }) => {
         </button>
       </div>
 
+      {/* MOBILE FULL SCREEN MENU */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -135,11 +170,13 @@ export const Header: React.FC<Props> = ({ className }) => {
             <button className={styles.closeButton} onClick={toggleMenu}>
               <X size={32} />
             </button>
+
             <nav className={styles.mobileNav}>
               <Link to="/" onClick={toggleMenu}>
                 Главная
               </Link>
-              <Link to="/" onClick={toggleMenu}>
+
+              <Link to="#" onClick={toggleMenu}>
                 <button
                   className={styles.link}
                   onClick={() => setDrawerOpen(true)}
@@ -147,18 +184,20 @@ export const Header: React.FC<Props> = ({ className }) => {
                   Контакты
                 </button>
               </Link>
-              <Link to="/" onClick={toggleMenu}>
+
+              <Link to="/courses" onClick={toggleMenu}>
                 Курсы
               </Link>
               <Link to="/" onClick={toggleMenu}>
                 Стажировка
               </Link>
-              <Link to="/" onClick={toggleMenu}>
+              <Link to="/ca" onClick={toggleMenu}>
                 Сертификация
               </Link>
-              <Link to="/" onClick={toggleMenu}>
-                Магазин
+              <Link to="/shop" onClick={toggleMenu}>
+                Каталог
               </Link>
+
               <Link to="/" onClick={toggleMenu}>
                 <img
                   src={whatsapp}
@@ -166,13 +205,23 @@ export const Header: React.FC<Props> = ({ className }) => {
                   className={styles.whatsapp}
                 />
               </Link>
-              <button className={styles.button} onClick={toggleMenu}>
+
+              {/* ВОЙТИ В МЕНЮ — тоже открывает LoginDrawer */}
+              <button
+                className={styles.button}
+                onClick={() => {
+                  toggleMenu();
+                  setIsLoginOpen(true);
+                }}
+              >
                 Войти
               </button>
             </nav>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Контакты Drawer */}
       <Drawer isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)} />
     </div>
   );
