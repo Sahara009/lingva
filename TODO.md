@@ -1,4 +1,2 @@
-- [x] Update CountriesCarouselSection.scss to stack cards absolutely with first visible, others behind
-- [x] Update CountriesCarouselSection.tsx animation to slide second card left, third card right on scroll
-- [x] Ensure responsive design
-- [ ] Test the animation
+- [x] Fix TypeScript typing for sectionsRef in CertificationPage.tsx
+- [x] Add null check in sectionsRef.current.forEach loop

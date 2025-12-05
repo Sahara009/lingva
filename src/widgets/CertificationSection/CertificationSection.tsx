@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import styles from "./CertificationSection.module.scss";
 import catImage from "../../shared/assets/catPhoto.png";
+import { Link } from "react-router-dom";
 
 interface Option {
   id: number;
@@ -40,6 +41,7 @@ const questions = {
 export const CertificationSection = () => {
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
   const [completed, setCompleted] = useState(false);
+  const MotionLink = motion(Link);
 
   const handleClick = (option: Option) => {
     if (option.correct) {
@@ -110,7 +112,8 @@ export const CertificationSection = () => {
       )}
 
       {completed && (
-        <motion.button
+        <MotionLink
+          to="/certification"
           className={styles.cta}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -118,7 +121,7 @@ export const CertificationSection = () => {
           whileTap={{ scale: 0.95 }}
         >
           Узнать свой уровень
-        </motion.button>
+        </MotionLink>
       )}
     </section>
   );

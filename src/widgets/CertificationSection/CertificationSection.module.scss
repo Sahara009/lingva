@@ -54,6 +54,7 @@
       align-items: flex-start;
       gap: 2rem;
       flex-wrap: wrap;
+      margin-bottom: 3rem;
 
       .cat {
         width: 150px;
@@ -117,7 +118,7 @@
         align-items: center;
         flex-wrap: nowrap;
         gap: 0.3rem !important;
-
+        margin-bottom: 2rem;
         .cat {
           width: 140px !important;
         }
