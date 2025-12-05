@@ -135,7 +135,9 @@ export default function BounceCards({
       {images.map((src, idx) => (
         <div
           key={idx}
-          ref={(el) => (cardsRef.current[idx] = el!)}
+          ref={(el) => {
+            cardsRef.current[idx] = el!;
+          }}
           className={styles.card}
           style={{ transform: transformStyles[idx] ?? "none" }}
           onMouseEnter={() => pushSiblings(idx)}

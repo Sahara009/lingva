@@ -35,6 +35,7 @@ export const Values: React.FC<Props> = ({ className }) => {
           },
         },
       });
+      console.log(tl);
     }
   }, []);
 

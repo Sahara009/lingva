@@ -107,7 +107,9 @@ export const CertificationPage = () => {
         {/* Header */}
         <section
           className={styles.header}
-          ref={(el) => (sectionsRef.current[0] = el)}
+          ref={(el) => {
+            sectionsRef.current[0] = el;
+          }}
         >
           {/* Визуальные элементы */}
           <div className={styles.floatingElements}>
@@ -153,13 +155,17 @@ export const CertificationPage = () => {
         </h2>
         <section
           className={styles.stickyNotesSection}
-          ref={(el) => (sectionsRef.current[1] = el)}
+          ref={(el) => {
+            sectionsRef.current[1] = el;
+          }}
         >
           {tasks.map((task, i) => (
             <div
               key={i}
               className={styles.taskNote}
-              ref={(el) => (notesRef.current[i] = el)}
+              ref={(el) => {
+                notesRef.current[i] = el;
+              }}
               style={
                 {
                   "--rotate": `${gsap.utils.random(-5, 5)}deg`,
@@ -185,7 +191,9 @@ export const CertificationPage = () => {
         {/* Exam Format */}
         <section
           className={styles.examFormat}
-          ref={(el) => (sectionsRef.current[2] = el)}
+          ref={(el) => {
+            sectionsRef.current[2] = el;
+          }}
         >
           <h2>Формат экзамена</h2>
           <ul>
@@ -201,7 +209,9 @@ export const CertificationPage = () => {
         {/* Sample Certificates */}
         <section
           className={styles.samples}
-          ref={(el) => (sectionsRef.current[3] = el)}
+          ref={(el) => {
+            sectionsRef.current[3] = el;
+          }}
         >
           <h2>Примеры сертификатов</h2>
           <div className={styles.sampleGrid}>
@@ -217,7 +227,9 @@ export const CertificationPage = () => {
         {/* Registration */}
         <section
           className={styles.card}
-          ref={(el) => (sectionsRef.current[4] = el)}
+          ref={(el) => {
+            sectionsRef.current[4] = el;
+          }}
         >
           <h2>Как пройти регистрацию</h2>
           <ol className={styles.list}>
@@ -232,7 +244,9 @@ export const CertificationPage = () => {
         {/* CTA */}
         <section
           className={styles.cta}
-          ref={(el) => (sectionsRef.current[5] = el)}
+          ref={(el) => {
+            sectionsRef.current[5] = el;
+          }}
         >
           <h2 className={styles.titleParallax}>Готовы получить сертификат?</h2>
           <p>Запишитесь на ближайшую дату экзамена онлайн.</p>

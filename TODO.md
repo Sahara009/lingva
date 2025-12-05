@@ -1,2 +1,0 @@
-- [x] Fix TypeScript typing for sectionsRef in CertificationPage.tsx
-- [x] Add null check in sectionsRef.current.forEach loop

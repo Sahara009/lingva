@@ -54,7 +54,10 @@ export const CertificationSection = () => {
     }
   };
 
-  const currentQuestion = selectedLanguage ? questions[selectedLanguage] : null;
+  type Language = "english" | "turkish" | "arabic";
+  const currentQuestion = selectedLanguage
+    ? questions[selectedLanguage as Language]
+    : null;
 
   return (
     <section className={styles.certification}>

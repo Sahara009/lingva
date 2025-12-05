@@ -60,6 +60,10 @@ export const Header: React.FC<Props> = ({ className }) => {
       <RegisterDrawer
         isOpen={isRegisterOpen}
         onClose={() => setIsRegisterOpen(false)}
+        onSwitchToLogin={() => {
+          setIsRegisterOpen(false);
+          setIsLoginOpen(true);
+        }}
       />
 
       <div className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
