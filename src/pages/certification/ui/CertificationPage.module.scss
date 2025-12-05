@@ -15,7 +15,7 @@
 
   h1 {
     font-size: 42px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 16px;
   }
 
@@ -70,7 +70,7 @@
 }
 
 .examFormat {
-  background: #e8eef3;
+  background: var(--color-secondary);
   padding: 40px;
   border-radius: 24px;
   margin-bottom: 80px;
@@ -152,7 +152,7 @@
 
 .button {
   padding: 14px 36px;
-  background: #9ab8d3;
+  background: var(--color-primary);
   border-radius: 20px;
   border: none;
   font-size: 18px;
@@ -180,4 +180,342 @@
 .calendarIcon {
   width: 20px;
   height: 20px;
+}
+.stickyNotesSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.taskNote {
+  background: #fffde9; /* светлая бумажка */
+  padding: 20px 24px;
+  border-radius: 16px;
+  width: 220px;
+  min-height: 100px;
+  position: relative;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: rotate(var(--rotate, 0deg));
+  display: flex;
+
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.taskNote p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.taskNote:hover {
+  transform: rotate(calc(var(--rotate, 0deg) + 2deg)) scale(1.03);
+  transition: transform 0.2s ease;
+}
+
+.pin {
+  width: 12px;
+  height: 12px;
+  background: #ff5dc1; /* красная иголочка */
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  color: #4e4e4e;
+  margin-top: 2px;
+}
+.tasks__title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 0.8rem 1.7rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 30px;
+  width: fit-content;
+  margin: 6rem auto 0rem;
+}
+.stickyNotesSection {
+  display: flex;
+  //   flex-direction: column;
+  margin-top: 2.5rem;
+
+  .taskNote {
+    display: flex;
+  }
+}
+.pin {
+  width: 10px;
+  height: 10px;
+  background: #ff5dc1;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(var(--rotate, 0deg));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.taskNote p {
+  font-family: "Patrick Hand", cursive; /* Google Fonts */
+  font-size: 14px;
+  line-height: 1.3;
+}
+.card {
+  margin-bottom: 3rem;
+}
+h2 {
+  font-weight: 700 !important;
+}
+.header {
+  position: relative;
+  text-align: center;
+
+  margin-bottom: 9rem;
+  overflow: hidden;
+
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .floatingElements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .floatingElement {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.7;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .heart {
+    color: #ff5dc1;
+    top: 20%;
+    left: 15%;
+  }
+
+  .star {
+    color: #ffd700;
+    top: 50%;
+    left: 80%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/* Базовые стили остаются без изменений */
+
+@media (max-width: 1200px) {
+  .page {
+    padding: 50px 0;
+  }
+
+  .header {
+    margin-bottom: 60px;
+
+    h1 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 16px;
+      max-width: 500px;
+    }
+  }
+
+  .grid {
+    gap: 20px;
+  }
+
+  .card {
+    padding: 30px;
+
+    h2 {
+      font-size: 22px;
+    }
+  }
+
+  .dateInfo {
+    font-size: 12px !important;
+  }
+  .examFormat {
+    padding: 30px;
+
+    h2 {
+      font-size: 24px;
+    }
+
+    ul {
+      font-size: 14px;
+    }
+  }
+
+  .samples h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .sampleGrid {
+    gap: 15px;
+  }
+
+  .sampleCard {
+    padding: 16px;
+  }
+
+  .sampleImage {
+    height: 140px;
+  }
+
+  .cta h2 {
+    font-size: 26px;
+  }
+
+  .button {
+    padding: 12px 28px;
+    font-size: 16px;
+  }
+  .tasks__title {
+    font-size: 1rem !important;
+    text-align: center;
+    padding: 12px 15px !important;
+    margin-top: 5rem;
+  }
+
+  .heart {
+    top: 10% !important;
+    left: 0% !important;
+  }
+
+  .star {
+    top: 40% !important;
+    left: 95% !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sampleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    h1 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 15px;
+      max-width: 90%;
+    }
+  }
+
+  .stickyNotesSection {
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .taskNote {
+    width: 90%;
+    min-height: 90px;
+    padding: 16px 20px;
+  }
+
+  .tasks__title {
+    font-size: 1.5rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 40px 0;
+  }
+
+  .header {
+    margin-bottom: 50px;
+
+    h1 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .card {
+    padding: 20px;
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  .examFormat {
+    padding: 20px;
+
+    h2 {
+      font-size: 22px;
+    }
+
+    ul {
+      font-size: 13px;
+    }
+  }
+
+  .samples h2 {
+    font-size: 22px;
+  }
+
+  .sampleCard {
+    padding: 14px;
+  }
+
+  .sampleImage {
+    height: 120px;
+  }
+
+  .cta h2 {
+    font-size: 22px;
+  }
+
+  .button {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
 }

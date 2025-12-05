@@ -63,11 +63,13 @@ export const Header: React.FC<Props> = ({ className }) => {
       />
 
       <div className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
-        <img
-          src={logo}
-          alt="Lingva Logo"
-          className={`${styles.header__logo} ${animate ? styles.fadeIn : ""}`}
-        />
+        <Link to={"/"}>
+          <img
+            src={logo}
+            alt="Lingva Logo"
+            className={`${styles.header__logo} ${animate ? styles.fadeIn : ""}`}
+          />
+        </Link>
 
         <nav
           className={`${styles.list} ${animate ? styles.fadeIn : ""}`}

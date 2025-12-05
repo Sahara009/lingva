@@ -1,0 +1,54 @@
+.stickyNote {
+  background: #fff9c4; // светло-жёлтая бумажка
+  padding: 20px 24px;
+  border-radius: 16px;
+  width: 250px;
+  min-height: 180px;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: rotate(var(--rotate, 0deg));
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: rotate(calc(var(--rotate, 0deg) + 2deg)) scale(1.03);
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+  }
+}
+
+.pin {
+  width: 12px;
+  height: 12px;
+  background: #f44336; // красная «иголочка»
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  color: #4e4e4e;
+  margin-top: 2px;
+}
