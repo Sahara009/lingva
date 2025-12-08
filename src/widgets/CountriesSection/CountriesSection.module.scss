@@ -6,7 +6,7 @@
   text-align: center;
   font-size: 2.4rem;
   font-weight: 700;
-  color: #333;
+
   margin-bottom: 60px;
 }
 
@@ -22,6 +22,7 @@
   gap: 40px;
   padding: 40px;
   border-radius: 24px;
+  border: 1px solid rgb(255, 195, 227);
 
   box-shadow: 0 12px 40px rgba(164, 201, 255, 0.25),
     0 12px 30px rgba(247, 167, 196, 0.15);
@@ -52,15 +53,18 @@
 
   h3 {
     font-size: 1.8rem;
-    color: #333;
-    font-weight: 700;
+
+    font-weight: 800;
   }
 
   p {
     font-size: 1rem;
-    color: #555;
+    opacity: 0.7;
+
     line-height: 1.6;
   }
+
+  color: #fff;
 }
 
 .info {
@@ -71,13 +75,11 @@
 
   span {
     font-size: 0.95rem;
-    color: #444;
   }
 }
 
 .price {
   font-weight: 600;
-  color: #2c2c2c;
 }
 
 .button {
@@ -87,12 +89,13 @@
   border-radius: 14px;
   border: none;
   cursor: pointer;
-  background: #a4c9ff;
-  color: white;
+  background: #fff;
+  color: var(--color-primary);
   transition: 0.25s;
 
   &:hover {
-    background: #8cb8f8;
+    background: var(--color-secondary);
     transform: translateY(-3px);
+    color: var(--color-primary);
   }
 }
