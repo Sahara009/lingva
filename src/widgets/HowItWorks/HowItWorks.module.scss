@@ -1,6 +1,6 @@
 .section {
-  padding: 100px 20px;
-  background: #fdfdfd;
+  padding: 3rem 0rem 2rem;
+  // background: #fdfdfd;
 }
 
 .wrapper {
@@ -11,7 +11,7 @@
   h2 {
     font-size: 2.4rem;
     font-weight: 700;
-    color: #333;
+    // color: #333;
     margin-bottom: 50px;
   }
 }
@@ -29,7 +29,7 @@
   box-shadow: 0 10px 32px rgba(164, 201, 255, 0.25),
     0 8px 20px rgba(247, 167, 196, 0.15);
   text-align: left;
-  transition: 0.3s ease;
+  transition: 0.2s ease-in-out;
 
   display: flex;
   flex-direction: column;
@@ -37,11 +37,12 @@
 
   h3 {
     font-size: 1.3rem;
-    color: #2c2c2c;
+    font-weight: 700;
+    // color: #2c2c2c;
   }
 
   p {
-    color: #555;
+    // color: #555;
     line-height: 1.5;
     font-size: 0.95rem;
   }
@@ -52,11 +53,11 @@
   height: 42px;
   background: linear-gradient(
     135deg,
-    rgba(164, 201, 255, 0.8),
-    rgba(255, 242, 248, 0.8)
+    rgba(58, 83, 176, 0.8),
+    rgba(111, 193, 218, 0.8)
   );
   border-radius: 50%;
-  color: #333;
+  color: #fff;
   font-weight: 600;
   display: flex;
   align-items: center;
