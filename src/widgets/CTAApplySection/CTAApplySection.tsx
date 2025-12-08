@@ -22,8 +22,9 @@ export const CTAApplySection = () => {
 
         <form className={styles.form}>
           <input type="text" placeholder="Ваше имя" />
-          <input type="tel" placeholder="Телефон" />
           <input type="email" placeholder="E-mail" />
+          <input type="text" placeholder="Комментарий" />
+
           <button type="submit">Отправить заявку</button>
         </form>
       </motion.div>

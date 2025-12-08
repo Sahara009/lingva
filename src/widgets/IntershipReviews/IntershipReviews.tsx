@@ -45,7 +45,7 @@ export const IntershipReviews = () => {
 
   return (
     <>
-      <motion.h2
+      <motion.h3
         className={styles.title}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export const IntershipReviews = () => {
         transition={{ duration: 0.6 }}
       >
         Ваши отзывы
-      </motion.h2>
+      </motion.h3>
       <section className={styles.carousel}>
         {[false, true].map((reverse, index) => (
           <div

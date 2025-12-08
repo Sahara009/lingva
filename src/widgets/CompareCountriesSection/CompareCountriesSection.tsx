@@ -8,7 +8,6 @@ type CountryComparison = {
   price: string;
   climate: string;
   culture: string;
-  housing: string;
 };
 
 const countries: CountryComparison[] = [
@@ -19,7 +18,6 @@ const countries: CountryComparison[] = [
     price: "от 900$",
     climate: "Тёплый, средиземноморский",
     culture: "Динамичная, туристическая",
-    housing: "Общежитие, апартаменты",
   },
   {
     name: "Иордания",
@@ -28,7 +26,6 @@ const countries: CountryComparison[] = [
     price: "от 1200$",
     climate: "Сухой, жаркий летом",
     culture: "Традиционная арабская",
-    housing: "Апартаменты, семьи",
   },
   {
     name: "Оман",
@@ -37,7 +34,6 @@ const countries: CountryComparison[] = [
     price: "от 1500$",
     climate: "Жаркий, сухой",
     culture: "Спокойная, академическая",
-    housing: "Апартаменты, гостевые дома",
   },
 ];
 
@@ -71,32 +67,26 @@ export const CompareCountriesSection = () => {
           </tr>
         </thead>
         <tbody>
-          {[
-            "level",
-            "difficulty",
-            "price",
-            "climate",
-            "culture",
-            "housing",
-          ].map((key, rowIndex) => (
-            <tr key={rowIndex} className={styles.row}>
-              <td className={styles.param}>
-                {
+          {["level", "difficulty", "price", "climate", "culture"].map(
+            (key, rowIndex) => (
+              <tr key={rowIndex} className={styles.row}>
+                <td className={styles.param}>
                   {
-                    level: "Уровень языка",
-                    difficulty: "Сложность программы",
-                    price: "Стоимость",
-                    climate: "Средний климат",
-                    culture: "Особенности культуры",
-                    housing: "Форматы проживания",
-                  }[key]
-                }
-              </td>
-              {countries.map((c, i) => (
-                <td key={i}>{c[key as keyof CountryComparison]}</td>
-              ))}
-            </tr>
-          ))}
+                    {
+                      level: "Уровень языка",
+                      difficulty: "Сложность программы",
+                      price: "Стоимость",
+                      climate: "Средний климат",
+                      culture: "Особенности культуры",
+                    }[key]
+                  }
+                </td>
+                {countries.map((c, i) => (
+                  <td key={i}>{c[key as keyof CountryComparison]}</td>
+                ))}
+              </tr>
+            )
+          )}
         </tbody>
       </motion.table>
     </section>
