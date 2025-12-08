@@ -1,64 +1,182 @@
-.section {
-  padding: 120px 20px;
-  overflow: hidden;
+/* ===== VARIABLES ===== */
+:root {
+  --first-color: hsl(220, 100%, 62%);
+  --title-color: hsl(220, 8%, 12%);
+  --text-color: hsl(220, 8%, 56%);
+  --body-color: #fff7ee;
+
+  --container-color: hsl(220, 48%, 96%);
+
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Unbounded", sans-serif;
+
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
 }
 
+/* ===== CAROUSEL WRAPPER ===== */
+.carousel {
+  position: relative;
+  max-width: 1120px;
+  height: 100vh;
+  padding-block: 5rem;
+  display: grid;
+  align-content: center;
+  row-gap: 2rem;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* ===== CONTENT TRACK ===== */
+.carousel__content {
+  width: max-content;
+  display: flex;
+  animation: scroll 18s linear infinite;
+}
+
+.carousel__reverse {
+  flex-direction: row-reverse;
+  animation-direction: reverse;
+  animation-delay: -1s;
+}
+
+.carousel__content:hover {
+  animation-play-state: paused;
+}
+
+/* ===== CARD ===== */
+.carousel__card {
+  width: 320px;
+  background-color: #fff;
+  box-shadow: 0 12px 24px hsla(220, 100%, 20%, 0.1);
+  padding: 1.5rem 1rem 2.5rem;
+  margin-inline: 1rem;
+  border-radius: 3rem;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* ===== IMAGE ===== */
+.carousel__image {
+  width: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px hsla(220, 100%, 20%, 0.3);
+  margin: 0 auto 0.5rem;
+}
+
+.carousel__img {
+  transition: transform 0.4s;
+}
+
+.carousel__card:hover .carousel__img {
+  transform: scale(1.2);
+}
+
+/* ===== NAME ===== */
+.carousel__name,
+.carousel__number {
+  // font: 500 var(--h3-font-size) var(--second-font);
+  // color: var(--title-color);
+}
+
+.carousel__name {
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+/* ===== RATING ===== */
+.carousel__rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.carousel__stars {
+  display: flex;
+  column-gap: 0.25rem;
+}
+
+.carousel__stars i {
+  font-size: 1rem;
+  color: var(--first-color);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.carousel__stars i:hover {
+  transform: scale(1.3);
+}
+
+/* ===== SCROLL ANIMATION ===== */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 320px) {
+  .carousel__card {
+    width: 250px;
+    padding-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .title {
+    margin-bottom: -20px !important;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .carousel {
+    row-gap: 3rem;
+  }
+
+  .carousel::before,
+  .carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .carousel::before {
+    right: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 247, 238, 0) 0%,
+      /* прозрачный фон */ var(--color-background) 100% /* твой цвет */
+    );
+  }
+
+  .carousel::after {
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      var(--color-background) 0%,
+      rgba(255, 247, 238, 0) 100% /* прозрачный фон */
+    );
+  }
+
+  .carousel__card {
+    width: 370px;
+    padding: 3rem 2rem;
+    border-radius: 4rem;
+  }
+}
 .title {
   text-align: center;
   font-size: 2.4rem;
   font-weight: 700;
-  margin-bottom: 60px;
-  color: #333;
-}
+  margin-bottom: 40px;
 
-.carousel {
-  display: flex;
-  gap: 24px;
-  cursor: grab;
-  padding-bottom: 20px;
-
-  &:active {
-    cursor: grabbing;
-  }
-}
-
-.card {
-  min-width: 320px;
-  background: #fff;
-  border-radius: 24px;
-  padding: 28px;
-  box-shadow: 0 14px 40px rgba(164, 201, 255, 0.25),
-    0 12px 30px rgba(247, 167, 196, 0.15);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 5px 15px rgba(164, 201, 255, 0.4);
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-
-  h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-
-  .country {
-    font-size: 0.9rem;
-    color: #666;
-  }
-}
-
-.text {
-  color: #444;
-  line-height: 1.55;
+  // color: #333;
 }
