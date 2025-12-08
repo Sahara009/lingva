@@ -6,6 +6,7 @@ import { BenefitsSection } from "../../../widgets/BenefitsSection/BenefitsSectio
 import { IntershipReviews } from "../../../widgets/IntershipReviews/IntershipReviews";
 import { CTAApplySection } from "../../../widgets/CTAApplySection/CTAApplySection";
 import { CompareCountriesSection } from "../../../widgets/CompareCountriesSection/CompareCountriesSection";
+import { LangLevel } from "../../../widgets/LangLevel/LangLevel";
 
 interface Props {
   className?: string;
@@ -19,6 +20,7 @@ export const Intership: React.FC<Props> = ({ className }) => {
         <CountriesSection />
         <BenefitsSection />
         <IntershipReviews />
+        <LangLevel />
         <CompareCountriesSection />
         <CTAApplySection />
       </div>
