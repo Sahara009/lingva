@@ -1,0 +1,67 @@
+.section {
+  padding: 120px 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #333;
+  line-height: 1.2;
+}
+
+.table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 12px 40px rgba(164, 201, 255, 0.15),
+    0 12px 30px rgba(247, 167, 196, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+
+  th,
+  td {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 1rem;
+    color: #444;
+  }
+
+  th {
+    background: #eaf4ff; // пастельный голубой
+    color: #333;
+    font-weight: 600;
+  }
+
+  tbody tr {
+    background: #fff;
+    transition: 0.3s;
+
+    &:hover {
+      background: #f0f8ff; // мягкий hover
+    }
+
+    &:nth-child(even) {
+      background: #fcf7fb; // пастельный розовый для полос
+    }
+  }
+
+  .param {
+    font-weight: 600;
+    color: #2c2c2c;
+  }
+}
+
+@media (max-width: 700px) {
+  .table {
+    display: block;
+    overflow-x: auto;
+
+    th,
+    td {
+      white-space: nowrap;
+    }
+  }
+}

@@ -106,7 +106,7 @@ export const Header: React.FC<Props> = ({ className }) => {
           </Link>
 
           <Link
-            to={"/"}
+            to={"/intership"}
             className={`${styles.link} ${animate ? styles.fadeIn : ""}`}
             style={{ animationDelay: "0.5s" }}
           >
@@ -194,7 +194,7 @@ export const Header: React.FC<Props> = ({ className }) => {
               <Link to="/courses" onClick={toggleMenu}>
                 Курсы
               </Link>
-              <Link to="/" onClick={toggleMenu}>
+              <Link to="/intership" onClick={toggleMenu}>
                 Стажировка
               </Link>
               <Link to="/certification" onClick={toggleMenu}>
