@@ -26,7 +26,7 @@ export const Tabs: React.FC<Props> = ({ className }) => {
   const [fadeOut, setFadeOut] = useState(false);
 
   // === COUNTERS ===
-  const [students, setStudents] = useState(0); // 1234
+  // const [students, setStudents] = useState(0);
   const [teachers, setTeachers] = useState(0); // 10
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -40,7 +40,7 @@ export const Tabs: React.FC<Props> = ({ className }) => {
         if (entry.isIntersecting && !animatedRef.current) {
           animatedRef.current = true;
 
-          animateCounter(0, 1234, 1500, setStudents);
+          // animateCounter(0, 1234, 1500, setStudents);
           animateCounter(0, 10, 1200, setTeachers);
         }
       },
@@ -88,8 +88,11 @@ export const Tabs: React.FC<Props> = ({ className }) => {
     <div className={className} ref={sectionRef}>
       <div className={style.tabs}>
         <div className={style.tabs__first}>
-          <h3>{students}</h3>
-          <p>учеников прошли обучение нашей школе</p>
+          <h3>Большая</h3>
+          <p>
+            команда квалифицированных специалистов с опытом работы в
+            международной сфере.
+          </p>
         </div>
 
         <div className={style.tabs__two}>

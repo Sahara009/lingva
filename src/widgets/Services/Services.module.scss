@@ -173,11 +173,39 @@
     }
   }
 }
+
+.blocks__languages {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 0.3rem;
+
+  button {
+    border: 1px solid var(--color-primary);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: #fff;
+    }
+  }
+}
+
 @media (max-width: 550px) {
   .infoBlock {
     gap: 2rem;
     padding: 0 0rem;
     flex-direction: column;
+  }
+  .blocks__languages {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   .services {
     &__buttons {

@@ -2,10 +2,42 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import styles from "./Drawer.module.scss";
 
+import whatsapp from "../../assets/whatsapp.svg";
+import telegramm from "../../assets/telegamIoc.svg";
+import wildberries from "../../assets/wildberries-sign-logo.svg";
+
 interface DrawerProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
+const iconsAnim = {
+  hidden: { opacity: 0, y: 10 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.5 + i * 0.1 },
+  }),
+};
+
+const SocialIcons = () => (
+  <div className={styles.socials}>
+    {[whatsapp, telegramm, wildberries].map((icon, i) => (
+      <motion.a
+        key={i}
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        custom={i}
+        variants={iconsAnim}
+        initial="hidden"
+        animate="visible"
+      >
+        <img className={styles.iconsMAR} src={icon} alt="icon" />
+      </motion.a>
+    ))}
+  </div>
+);
 
 export const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
   const [name, setName] = useState("");
@@ -104,6 +136,9 @@ export const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
               >
                 Отправить
               </motion.button>
+
+              {/* 🔗 ИКОНКИ В КОНЦЕ */}
+              <SocialIcons />
             </motion.div>
           )}
 
@@ -164,6 +199,9 @@ export const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
               >
                 Отправить
               </motion.button>
+
+              {/* 🔗 ИКОНКИ В КОНЦЕ */}
+              <SocialIcons />
             </motion.div>
           )}
         </>

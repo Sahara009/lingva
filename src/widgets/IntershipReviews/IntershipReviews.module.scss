@@ -18,13 +18,18 @@
 .carousel {
   position: relative;
   max-width: 1120px;
-  height: 100vh;
+  // height: 100vh;
   padding-block: 5rem;
   display: grid;
   align-content: center;
   row-gap: 2rem;
   overflow: hidden;
-  margin: 0 auto;
+  margin: -50px auto;
+}
+.carousel__stars {
+  display: flex;
+  gap: 4px;
+  color: gold; // или var(--color-primary)
 }
 
 /* ===== CONTENT TRACK ===== */
@@ -128,8 +133,12 @@
   }
 }
 @media screen and (max-width: 400px) {
+  .carousel {
+    margin: 0 auto;
+  }
   .title {
     margin-bottom: -20px !important;
+    margin-top: 70px;
   }
 }
 
@@ -176,7 +185,7 @@
   text-align: center;
   font-size: 2.4rem;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 
   // color: #333;
 }

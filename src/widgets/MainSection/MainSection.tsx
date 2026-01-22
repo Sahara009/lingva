@@ -45,16 +45,16 @@ export const MainSection: React.FC<Props> = ({ className }) => {
           </h1>
           <p>
             «Библиотека Лингва» — образовательная платформа, объединяющая
-            обучение языкам, профильную литературу и программы погружения за
-            рубежом. Всё, что нужно для уверенного освоения языка — в одном
-            месте.
+            обучение языкам, профильную литературу, программы языковых
+            стажировок за рубежом и программы погружения за рубежом. Всё, что
+            нужно для уверенного освоения языка — в одном месте.
           </p>
           <div className={styles.mainSection__buttons}>
             <button className={styles.mainSection__buttons_blue}>
-              Узнать больше
+              Подробнее <MoveUpRight className={styles.icon} />
             </button>
             <button className={styles.mainSection__buttons_red}>
-              Подробнее <MoveUpRight className={styles.icon} />
+              Наши курсы <MoveUpRight className={styles.icon} />
             </button>
           </div>
         </div>

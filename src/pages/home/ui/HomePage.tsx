@@ -13,28 +13,28 @@ import { useIsMobile } from "../../../lib/useIsMobile";
 import { JourneyMapMobile } from "../../../widgets/JorneyMapSection/JourneyMapMobile";
 import { Cards } from "../../../widgets/CountriesCarouselSection/CountriesCarouselSection";
 import { CardsMobile } from "../../../widgets/CountriesCarouselSection/CountriesMobile";
-import BounceCards from "../../../widgets/BounceCards/BounceCards";
-import BounceCardsMobile from "../../../widgets/BounceCards/BounceCardsMobile";
+// import BounceCards from "../../../widgets/BounceCards/BounceCards";
+// import BounceCardsMobile from "../../../widgets/BounceCards/BounceCardsMobile";
 import { CertificationSection } from "../../../widgets/CertificationSection/CertificationSection";
 
 interface Props {
   className?: string;
 }
 
-const images = [
-  "https://picsum.photos/400/400?grayscale",
-  "https://picsum.photos/500/500?grayscale",
-  "https://picsum.photos/600/600?grayscale",
-  "https://picsum.photos/700/700?grayscale",
-  "https://picsum.photos/300/300?grayscale",
-];
-const transformStyles = [
-  "rotate(5deg) translate(-400px)",
-  "rotate(0deg) translate(-210px)",
-  "rotate(-5deg)",
-  "rotate(5deg) translate(200px)",
-  "rotate(-5deg) translate(390px)",
-];
+// const images = [
+//   "https://picsum.photos/400/400?grayscale",
+//   "https://picsum.photos/500/500?grayscale",
+//   "https://picsum.photos/600/600?grayscale",
+//   "https://picsum.photos/700/700?grayscale",
+//   "https://picsum.photos/300/300?grayscale",
+// ];
+// const transformStyles = [
+//   "rotate(5deg) translate(-400px)",
+//   "rotate(0deg) translate(-210px)",
+//   "rotate(-5deg)",
+//   "rotate(5deg) translate(200px)",
+//   "rotate(-5deg) translate(390px)",
+// ];
 
 export const HomePage: React.FC<Props> = ({ className }) => {
   const isMobile = useIsMobile(1000);
@@ -53,7 +53,7 @@ export const HomePage: React.FC<Props> = ({ className }) => {
       {/* <Mission /> */}
       <Partnership />
 
-      {isMobile ? (
+      {/* {isMobile ? (
         <BounceCardsMobile images={images} />
       ) : (
         <BounceCards
@@ -67,7 +67,7 @@ export const HomePage: React.FC<Props> = ({ className }) => {
           transformStyles={transformStyles}
           enableHover={false}
         />
-      )}
+      )} */}
       <CertificationSection />
       <Questions />
       <Form />
