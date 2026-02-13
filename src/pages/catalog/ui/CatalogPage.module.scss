@@ -1,0 +1,289 @@
+.page {
+  min-height: 100vh;
+  padding: 60px 0;
+  background: var(--color-background);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 18px;
+    color: #4e4e4e;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.catalogBlock {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  margin-bottom: 32px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.blockHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 32px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1a8caa 100%);
+  color: white;
+
+  .blockIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+.blockContent {
+  padding: 32px;
+
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    // color: #4e4e4e;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  a {
+    color: white;
+  }
+}
+
+.catalogLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+
+  &:hover {
+    background: #0a4d6e;
+    transform: translateX(4px);
+  }
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover svg {
+    transform: translateX(4px);
+  }
+}
+
+.orderInfo {
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    // color: #4e4e4e;
+    margin-bottom: 16px;
+  }
+}
+
+.conditionsList {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+
+  li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #4e4e4e;
+    line-height: 1.5;
+
+    &::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: bold;
+    }
+  }
+}
+
+.catalogNote {
+  font-weight: 600;
+  color: var(--color-primary) !important;
+  margin-top: 20px !important;
+  margin-bottom: 12px !important;
+}
+
+.comingSoon {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+
+  p {
+    font-size: 16px;
+    // color: #4e4e4e;
+    margin-bottom: 16px;
+  }
+
+  .stayTuned {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .page {
+    padding: 50px 0;
+  }
+
+  .header {
+    margin-bottom: 50px;
+
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .blockHeader {
+    padding: 24px 28px;
+
+    h2 {
+      font-size: 22px;
+    }
+  }
+
+  .blockContent {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    h1 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+
+  .blockHeader {
+    padding: 20px 24px;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .blockIcon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .blockContent {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 40px 0;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  .header {
+    margin-bottom: 40px;
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .blockHeader {
+    padding: 18px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  .blockContent {
+    padding: 20px;
+  }
+
+  .catalogLink {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  .conditionsList li {
+    font-size: 14px;
+  }
+
+  .comingSoon {
+    padding: 32px 16px;
+  }
+}

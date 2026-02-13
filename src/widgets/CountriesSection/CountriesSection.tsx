@@ -6,6 +6,21 @@ import jordan from "../../shared/assets/maxresdefault.jpg";
 import turkiye from "../../shared/assets/stambul4.jpg";
 import oman from "../../shared/assets/14108980603_21547eb1fc_b.jpg";
 
+interface Country {
+  id: number;
+  name: string;
+  bg: string;
+  short: string;
+  bullets: {
+    icon: React.ForwardRefExoticComponent<
+      React.SVGProps<SVGSVGElement> & React.RefAttributes<SVGSVGElement>
+    >;
+    text: string;
+  }[];
+  full: string;
+  accent: string;
+}
+
 const countries = [
   {
     id: 2,
@@ -66,7 +81,7 @@ const countries = [
 ];
 
 export const CountriesSection = () => {
-  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
 
   return (
     <section className={styles.section}>

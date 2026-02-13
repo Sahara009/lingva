@@ -122,7 +122,7 @@ export const Header: React.FC<Props> = ({ className }) => {
           </Link>
 
           <Link
-            to={"/"}
+            to={"/catalog"}
             className={`${styles.link} ${animate ? styles.fadeIn : ""}`}
             style={{ animationDelay: "0.7s" }}
           >
