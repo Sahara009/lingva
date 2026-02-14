@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { BookOpen, ShoppingCart, FileText, ExternalLink } from "lucide-react";
 import styles from "./CatalogPage.module.scss";
@@ -38,7 +37,7 @@ export const CatalogPage = () => {
           <div className={styles.blockContent}>
             <p>Учебники и книги по изучению иностранных языков</p>
             <a
-              href="https://www.wildberries.ru"
+              href="https://www.wildberries.ru/seller/1144265"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.catalogLink}

@@ -4,7 +4,8 @@ import styles from "./CountriesSection.module.scss";
 import { MapPin, Languages, GraduationCap, Globe } from "lucide-react";
 import jordan from "../../shared/assets/maxresdefault.jpg";
 import turkiye from "../../shared/assets/stambul4.jpg";
-import oman from "../../shared/assets/14108980603_21547eb1fc_b.jpg";
+import oman from "../../shared/assets/634159-2560x1440-desktop-hd-oman-background-photo.jpg";
+import { Link } from "react-router-dom";
 
 interface Country {
   id: number;
@@ -168,7 +169,9 @@ export const CountriesSection = () => {
               <h3 className={styles.modal__title}>{selectedCountry.name}</h3>
               <p className={styles.fullText}>{selectedCountry.full}</p>
 
-              <button className={styles.contactButton}>Связаться</button>
+              <Link to={"https://t.me/bibliotekalingvaru"}>
+                <button className={styles.contactButton}>Связаться</button>
+              </Link>
             </motion.div>
           </motion.div>
         )}

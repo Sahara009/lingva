@@ -5,6 +5,8 @@ import styles from "./Drawer.module.scss";
 import whatsapp from "../../assets/whatsapp.svg";
 import telegramm from "../../assets/telegamIoc.svg";
 import wildberries from "../../assets/wildberries-sign-logo.svg";
+import instagramm from "../../assets/icons8-instagram.svg";
+import email from "../../assets/mail-black-envelope-symbol_icon-icons.com_56519.svg";
 
 interface DrawerProps {
   isOpen: boolean;
@@ -20,12 +22,23 @@ const iconsAnim = {
   }),
 };
 
+const socialLinks = [
+  { icon: whatsapp, href: "https://wa.me/79273601138" },
+  { icon: telegramm, href: "https://t.me/bibliotekalingvaru" },
+  { icon: wildberries, href: "https://www.wildberries.ru/seller/1144265" },
+  {
+    icon: instagramm,
+    href: "https://www.instagram.com/biblioteka.lingva?igsh=MWIwYXd5dHVndm5y",
+  },
+  { icon: email, href: "mailto:bibliotekalingva@gmail.com" },
+];
+
 const SocialIcons = () => (
   <div className={styles.socials}>
-    {[whatsapp, telegramm, wildberries].map((icon, i) => (
+    {socialLinks.map((item, i) => (
       <motion.a
         key={i}
-        href="#"
+        href={item.href}
         target="_blank"
         rel="noopener noreferrer"
         custom={i}
@@ -33,7 +46,7 @@ const SocialIcons = () => (
         initial="hidden"
         animate="visible"
       >
-        <img className={styles.iconsMAR} src={icon} alt="icon" />
+        <img className={styles.iconsMAR} src={item.icon} alt="icon" />
       </motion.a>
     ))}
   </div>

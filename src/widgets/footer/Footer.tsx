@@ -3,6 +3,7 @@ import style from "./Footer.module.scss";
 import logo from "../../shared/assets/snapedit_1763204574005 1.png";
 import whatsapp from "../../shared/assets/whatsapp.svg";
 import telegramm from "../../shared/assets/telegamIoc.svg";
+import { Link } from "react-router-dom";
 
 interface Props {
   className?: string;
@@ -20,11 +21,18 @@ export const Footer: React.FC<Props> = ({ className }) => {
             <div>
               <h4>Меню</h4>
               <nav>
-                <li>Каталог</li>
-                <li>Контакты</li>
-                <li>Курсы</li>
-                <li>Стажировка</li>
-                <li>Сертификация</li>
+                <Link to={"/catalog"}>
+                  <li>Каталог</li>
+                </Link>
+                <Link to={"/courses"}>
+                  <li>Курсы</li>
+                </Link>
+                <Link to={"/intership"}>
+                  <li>Стажировка</li>
+                </Link>{" "}
+                <Link to={"/certification"}>
+                  <li>Сертификация</li>
+                </Link>
               </nav>
             </div>
             {/* <div>
@@ -37,18 +45,28 @@ export const Footer: React.FC<Props> = ({ className }) => {
             <div>
               <h4>Информация</h4>
               <nav>
-                <li>Вопросы</li>
-                <li>Помощь</li>
+                <Link to={"https://t.me/bibliotekalingvaru"}>
+                  <li>Вопросы</li>
+                </Link>
+                <Link to={"https://t.me/bibliotekalingvaru"}>
+                  <li>Помощь</li>
+                </Link>
               </nav>
             </div>
           </div>
           <div className={style.footer__up_more}>
             <h4>Больше возможностей вместе с Библиотекой Лингва!</h4>
             <p>Ответим на любые интересующие вас вопросы</p>
-            <button>Задать вопрос</button>
+            <Link to={"https://t.me/bibliotekalingvaru"}>
+              <button>Задать вопрос</button>
+            </Link>
             <div className={style.footer__up_more_icons}>
-              <img src={whatsapp} alt="icon" />
-              <img src={telegramm} alt="icon" />
+              <a href="https://wa.me/79273601138">
+                <img src={whatsapp} alt="icon" />
+              </a>
+              <Link to={"https://t.me/bibliotekalingvaru"}>
+                <img src={telegramm} alt="icon" />
+              </Link>
             </div>
           </div>
         </div>

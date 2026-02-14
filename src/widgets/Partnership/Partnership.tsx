@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./Partnership.module.scss";
+import { Link } from "react-router-dom";
 
 interface Props {
   className?: string;
@@ -30,7 +31,9 @@ export const Partnership: React.FC<Props> = ({ className }) => {
             С нами вы можете совместить образовательную деятельность с
             дополнительным доходом и профессиональным ростом.
           </p>
-          <button>ОСТАВИТЬ ЗАЯВКУ НА СОТРУДНИЧЕСВТО</button>
+          <Link to={"https://t.me/bibliotekalingvaru"}>
+            <button>ОСТАВИТЬ ЗАЯВКУ НА СОТРУДНИЧЕСВТО</button>
+          </Link>
         </div>
       </div>
     </div>

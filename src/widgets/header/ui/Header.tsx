@@ -134,20 +134,21 @@ export const Header: React.FC<Props> = ({ className }) => {
           className={`${styles.buttons} ${animate ? styles.fadeIn : ""}`}
           style={{ animationDelay: "0.8s" }}
         >
-          <Link to={"/"}>
+          <a href="https://wa.me/79273601138">
             <img
               src={whatsapp}
               alt="whatsapp"
               className={`${styles.whatsapp} ${animate ? styles.fadeIn : ""}`}
               style={{ animationDelay: "0.9s" }}
             />
-          </Link>
+          </a>
 
           {/* ВОЙТИ — открывает LoginDrawer */}
           <button
             className={`${styles.button} ${animate ? styles.fadeIn : ""}`}
             style={{ animationDelay: "1s" }}
             onClick={() => setIsLoginOpen(true)}
+            disabled
           >
             Войти
           </button>
@@ -200,7 +201,7 @@ export const Header: React.FC<Props> = ({ className }) => {
               <Link to="/certification" onClick={toggleMenu}>
                 Сертификация
               </Link>
-              <Link to="/shop" onClick={toggleMenu}>
+              <Link to="/catalog" onClick={toggleMenu}>
                 Каталог
               </Link>
 
@@ -219,6 +220,7 @@ export const Header: React.FC<Props> = ({ className }) => {
                   toggleMenu();
                   setIsLoginOpen(true);
                 }}
+                disabled
               >
                 Войти
               </button>

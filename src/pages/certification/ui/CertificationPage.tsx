@@ -14,6 +14,7 @@ import {
   FileText,
 } from "lucide-react";
 import styles from "./CertificationPage.module.scss";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -351,10 +352,11 @@ export const CertificationPage = () => {
         >
           <h2 className={styles.titleParallax}>Готовы получить сертификат?</h2>
           <p>Запишитесь на ближайшую дату экзамена онлайн.</p>
-
-          <button className={`${styles.button} ${styles.ctaButton}`}>
-            Записаться на экзамен <ArrowRight />
-          </button>
+          <Link to={"https://t.me/bibliotekalingvaru"}>
+            <button className={`${styles.button} ${styles.ctaButton}`}>
+              Записаться на экзамен <ArrowRight />
+            </button>
+          </Link>
 
           <div className={styles.dateInfo}>
             <Calendar className={styles.calendarIcon} />

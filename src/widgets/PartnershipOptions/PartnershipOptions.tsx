@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./PartnershipOptions.module.scss";
 import { Briefcase, GraduationCap, BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Props {
   className?: string;
@@ -58,7 +59,9 @@ export const PartnershipOptions: React.FC<Props> = ({ className }) => {
             Будем рады обсудить формат сотрудничества и подготовить
             индивидуальное предложение для вашей организации.
           </p>
-          <button>ОБСУДИТЬ СОТРУДНИЧЕСТВО</button>
+          <Link to={"https://t.me/bibliotekalingvaru"}>
+            <button>ОБСУДИТЬ СОТРУДНИЧЕСТВО</button>
+          </Link>
         </div>
       </div>
     </div>

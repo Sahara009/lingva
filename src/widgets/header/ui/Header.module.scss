@@ -77,6 +77,12 @@ $transition-delay: 0.05s;
     border-radius: 30px;
     background-color: var(--color-primary);
     color: white;
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
   }
 }
 
@@ -241,6 +247,12 @@ $transition-delay: 0.05s;
     border-radius: 30px;
     background-color: var(--color-primary);
     color: white;
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
   }
 }
 .sticky {

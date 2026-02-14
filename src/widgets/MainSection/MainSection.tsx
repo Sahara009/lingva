@@ -3,7 +3,9 @@ import styles from "./MainSection.module.scss";
 import { MoveUpRight } from "lucide-react";
 import cat1 from "../../shared/assets/cat1.png";
 import cat2 from "../../shared/assets/cat4.png";
+import main from "../../shared/assets/group-friends-enjoying-drinks-staircase (1).jpg";
 import { FallingIcons } from "../../shared/ui/FallingIcons/FallingIcons";
+import { Link } from "react-router-dom";
 
 interface Props {
   className?: string;
@@ -50,12 +52,16 @@ export const MainSection: React.FC<Props> = ({ className }) => {
             нужно для уверенного освоения языка — в одном месте.
           </p>
           <div className={styles.mainSection__buttons}>
-            <button className={styles.mainSection__buttons_blue}>
-              Подробнее <MoveUpRight className={styles.icon} />
-            </button>
-            <button className={styles.mainSection__buttons_red}>
-              Наши курсы <MoveUpRight className={styles.icon} />
-            </button>
+            <Link to={"/courses"}>
+              <button className={styles.mainSection__buttons_blue}>
+                Подробнее <MoveUpRight className={styles.icon} />
+              </button>{" "}
+            </Link>{" "}
+            <Link to={"/courses"}>
+              <button className={styles.mainSection__buttons_red}>
+                Наши курсы <MoveUpRight className={styles.icon} />
+              </button>{" "}
+            </Link>
           </div>
         </div>
 
@@ -64,7 +70,7 @@ export const MainSection: React.FC<Props> = ({ className }) => {
             mounted ? styles.appearPhoto : ""
           }`}
         >
-          <div className={styles.block}></div>
+          <img className={styles.block} src={main} alt="" />
 
           <img
             key={activeCat}
