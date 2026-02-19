@@ -9,7 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "echo 'Use GitHub Actions for deployment - push to main branch'"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
