@@ -4,6 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ArrowRight, Globe, BookOpen, GraduationCap } from "lucide-react";
 import styles from "./CoursesPage.module.scss";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -342,9 +343,11 @@ export const CoursesPage = () => {
         >
           <h2>Готовы начать обучение?</h2>
           <p>Выберите язык и формат обучения, который подходит именно вам</p>
-          <button className={styles.button}>
-            Выбрать курс <ArrowRight />
-          </button>
+          <Link to={"https://t.me/bibliotekalingvaru"}>
+            <button className={styles.button}>
+              Выбрать курс <ArrowRight />
+            </button>
+          </Link>
         </section>
       </div>
     </main>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Download, ExternalLink } from "lucide-react";
 import styles from "./CertificateSample.module.scss";
 import cert from "../../shared/assets/2026-02-17_15-08-20.png";
+import cert2 from "../../shared/assets/Снимок экрана 2026-02-19 180447.png";
 import certification1Pdf from "../../shared/assets/certification1.pdf";
 import certification2Pdf from "../../shared/assets/certificationPdf2.pdf";
 
@@ -9,9 +10,16 @@ const certificates = [
   {
     id: 1,
     title: "Международный сертификат",
-    description: "Официальное подтверждение уровня владения языком A1-C2",
+    description: "Официальное подтверждение уровня владения арабским языком",
     pdfUrl: certification1Pdf,
     src: cert,
+  },
+  {
+    id: 2,
+    title: "Международный сертификат",
+    description: "Официальное подтверждение уровня владения турецким языком",
+    pdfUrl: certification2Pdf,
+    src: cert2,
   },
 ];
 

@@ -22,9 +22,11 @@
 
 .sampleGrid {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   margin: 0 auto;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .sampleCard {
@@ -38,8 +40,9 @@
   align-items: center;
   text-align: center;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 380px;
   width: 100%;
+  flex: 1;
 
   &:hover {
     transform: translateY(-8px);
