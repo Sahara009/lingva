@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import styles from "./Drawer.module.scss";
+import { sendApplicationEmail } from "../../../lib/emailService";
 
 import whatsapp from "../../assets/whatsapp.svg";
 import telegramm from "../../assets/telegamIoc.svg";
@@ -56,15 +57,36 @@ export const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const isMobile = window.innerWidth <= 768;
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!name.trim() || !email.trim() || !comment.trim()) {
       alert("Заполните все поля!");
       return;
     }
-    alert(`Имя: ${name}\nEmail: ${email}\nКомментарий: ${comment}`);
+
+    setIsLoading(true);
+    setStatus("idle");
+
+    try {
+      await sendApplicationEmail({
+        name,
+        email,
+        message: comment,
+      });
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setComment("");
+    } catch (error) {
+      setStatus("error");
+      console.error("Error sending email:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const anim = {
@@ -146,9 +168,24 @@ export const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
                 animate="visible"
                 className={styles.submit}
                 onClick={handleSubmit}
+                disabled={isLoading}
               >
-                Отправить
+                {isLoading ? "Отправка..." : "Отправить"}
               </motion.button>
+
+              {status === "success" && (
+                <p className={styles.successMessage}>
+                  Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в
+                  ближайшее время.
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className={styles.errorMessage}>
+                  Произошла ошибка при отправке заявки. Пожалуйста, попробуйте
+                  ещё раз.
+                </p>
+              )}
 
               {/* 🔗 ИКОНКИ В КОНЦЕ */}
               <SocialIcons />
@@ -209,9 +246,24 @@ export const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
                 animate="visible"
                 className={styles.submit}
                 onClick={handleSubmit}
+                disabled={isLoading}
               >
-                Отправить
+                {isLoading ? "Отправка..." : "Отправить"}
               </motion.button>
+
+              {status === "success" && (
+                <p className={styles.successMessage}>
+                  Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в
+                  ближайшее время.
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className={styles.errorMessage}>
+                  Произошла ошибка при отправке заявки. Пожалуйста, попробуйте
+                  ещё раз.
+                </p>
+              )}
 
               {/* 🔗 ИКОНКИ В КОНЦЕ */}
               <SocialIcons />

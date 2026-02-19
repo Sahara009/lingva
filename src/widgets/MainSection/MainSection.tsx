@@ -3,7 +3,7 @@ import styles from "./MainSection.module.scss";
 import { MoveUpRight } from "lucide-react";
 import cat1 from "../../shared/assets/cat1.png";
 import cat2 from "../../shared/assets/cat4.png";
-import main from "../../shared/assets/group-friends-enjoying-drinks-staircase (1).jpg";
+import main2 from "../../shared/assets/Airbrush-IMAGE-ENHANCER-1771510935225-1771510935225-fotor-20260219172251.png";
 import { FallingIcons } from "../../shared/ui/FallingIcons/FallingIcons";
 import { Link } from "react-router-dom";
 
@@ -70,7 +70,7 @@ export const MainSection: React.FC<Props> = ({ className }) => {
             mounted ? styles.appearPhoto : ""
           }`}
         >
-          <img className={styles.block} src={main} alt="" />
+          <img className={styles.block} src={main2} alt="" />
 
           <img
             key={activeCat}

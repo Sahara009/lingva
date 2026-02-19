@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import styles from "./CertificationPage.module.scss";
 import { Link } from "react-router-dom";
+import { CertificateSample } from "../../../widgets/CertificateSample/CertificateSample";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -205,7 +206,7 @@ export const CertificationPage = () => {
             экзаменационных советов по иностранным языкам).
           </p>
         </section>
-
+        <CertificateSample />
         {/* Tests Grid - Two columns for Arabic and Turkish */}
         <section
           className={styles.testsGrid}
