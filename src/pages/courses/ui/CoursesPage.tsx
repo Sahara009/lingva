@@ -24,7 +24,7 @@ export const CoursesPage = () => {
         ease: "power2.out",
       });
 
-      // Section animations
+      // Section animations еуавыав
       sectionsRef.current.forEach((sec, i) => {
         if (sec) {
           gsap.from(sec, {
