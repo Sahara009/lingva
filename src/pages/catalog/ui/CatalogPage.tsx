@@ -60,11 +60,7 @@ export const CatalogPage = () => {
                 языков на заказ из-за границы.
               </p>
               <ul className={styles.conditionsList}>
-                <li>
-                  Минимальная сумма заказа — 10 000 рублей (стоимость доставки
-                  не включена)
-                </li>
-                <li>Срок доставки до Москвы составляет примерно 3–4 недели</li>
+                <li>Срок доставки до Москвы составляет примерно 4–6 недель</li>
               </ul>
               <p>
                 Если вы хотите оформить заказ и согласны с условиями, напишите
@@ -75,7 +71,7 @@ export const CatalogPage = () => {
                 Ознакомьтесь с нашим каталогом:
               </p>
               <a
-                href="#"
+                href="https://disk.yandex.ru/i/AiwJCaNpUomtTg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.catalogLink}

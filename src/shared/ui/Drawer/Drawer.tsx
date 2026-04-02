@@ -8,6 +8,7 @@ import telegramm from "../../assets/telegamIoc.svg";
 import wildberries from "../../assets/wildberries-sign-logo.svg";
 import instagramm from "../../assets/icons8-instagram.svg";
 import email from "../../assets/mail-black-envelope-symbol_icon-icons.com_56519.svg";
+import vkontakte from "../../assets/icons8-vk.svg";
 
 interface DrawerProps {
   isOpen: boolean;
@@ -30,6 +31,10 @@ const socialLinks = [
   {
     icon: instagramm,
     href: "https://www.instagram.com/biblioteka.lingva?igsh=MWIwYXd5dHVndm5y",
+  },
+  {
+    icon: vkontakte,
+    href: "https://vk.com/id1108142845",
   },
   { icon: email, href: "mailto:bibliotekalingva@gmail.com" },
 ];

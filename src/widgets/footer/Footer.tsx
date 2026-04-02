@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Footer.module.scss";
 import logo from "../../shared/assets/snapedit_1763204574005 1.png";
 import whatsapp from "../../shared/assets/whatsapp.svg";
+import vk from "../../shared/assets/icons8-vk (1).svg";
 import telegramm from "../../shared/assets/telegamIoc.svg";
 import { Link } from "react-router-dom";
 
@@ -66,6 +67,9 @@ export const Footer: React.FC<Props> = ({ className }) => {
               </a>
               <Link to={"https://t.me/bibliotekalingvaru"}>
                 <img src={telegramm} alt="icon" />
+              </Link>
+              <Link to={"https://vk.com/id1108142845"}>
+                <img src={vk} alt="icon" />
               </Link>
             </div>
           </div>
